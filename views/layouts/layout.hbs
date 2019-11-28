@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/static/stylesheets/normalize.css" />
+  <link rel='stylesheet' href='/static/stylesheets/layout.css' />
+  <link rel='stylesheet' href='/static/stylesheets/sign.css' />
+</head>
+
+<body>
+  <script src="/static/javascripts/axios.min.map.js"></script>
+  {{{body}}}
+  <script>
+    axios.defaults.baseURL = 'http://localhost:3000';
+    axios.interceptors.request.use(function (config) {
+      console.log('拦截了请求')
+      const t = localStorage.getItem('ex09_t')
+      if (t) {
+        config.headers.common['Authorization'] = t
+      }
+      console.log('config:' + JSON.stringify(config))
+      return config
+    }, function (error) {
+      console.log('no token')
+      return Promise.reject(error)
+    })
+  </script>
+</body>
+
+</html>
