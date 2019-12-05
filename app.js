@@ -11,6 +11,7 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var signupRouter = require('./routes/signup');
 var signinRouter = require('./routes/signin');
+var redis=require('./models/db_redisconfig.js');
 
 var app = express();
 

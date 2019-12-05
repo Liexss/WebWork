@@ -36,13 +36,13 @@
     let pwd = document.signin.pwd.value
     let data = { params: { email, pwd } }
     axios.get('/signin/verify', data).then((r) => {
-      console.log(r.data)
-      let { result, msg } = r.data
+      console.log(r.data);
+      let { result, msg} = r.data
       if (result === 1) {
         // axios.defaults.headers.common['Authorization'] = r.data.token
         Msg(msg, result)
-        localStorage.setItem("ex09_t", r.data.token)
-        window.location = '/'
+        localStorage.setItem(toString(r.data.admin)+"ex09_t", r.data.token);
+        //window.location = '/';
       } else Msg(msg)
     });
   });

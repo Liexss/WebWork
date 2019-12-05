@@ -35,6 +35,7 @@ const insertuserHandler = async (vals) =>new Promise((resolve, reject) =>  {
 })
 
 const searchuserHandler = async (vals) =>new Promise((resolve, reject) =>  {
+  console.log(vals);
   pool.getConnection((err, connection) => {
     if(err){
       console.log("连接失败");

@@ -13,21 +13,23 @@ router.get('/', (req, res) => {
 
 router.get('/verify', async (req, res) => {
   let { email, pwd } = url.parse(req.url, true).query;
-  console.log(JSON.stringify(url.parse(req.url, true).query))
+  //console.log(JSON.stringify(url.parse(req.url, true).query))
 
   // 用户查询
-  const User = require('../models/db_user');
+  const User = require('../models/db_mysqluser');
   const doc = await  User.searchuserHandler({user_id:email});
-  console.log(doc.result[0].user_id);
+  //console.log(doc.result[0].user_id);
+  console.log(doc);
   // 登录检测
   if (Object.keys(doc.result).length!=0) {
     const r = await decrypt(pwd,doc.result[0].salt);
-    console.log('r:' + r)
+    //console.log('r:' + r)
     if (r !== doc.result[0].password) render.err(res, '密码错误！')
     else {
-      const t = jwt.sign({ email, pwd: r }, secret, { expiresIn: 60 })
-      console.log('token:' + t)
-      res.send({ result: 1, msg: '登录成功', token: t })
+      const t = jwt.sign({ email, pwd: r }, secret, { expiresIn: 60*60*3 });
+      
+      //console.log('token:' + t)
+      res.send({ result: 1, msg: '登录成功',admin:doc.result[0].user_id, token: t });
     }
   } else {
     res.send({ result: 0, msg: '用户不存在！' })
