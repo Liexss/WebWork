@@ -13,6 +13,8 @@ var signupRouter = require('./routes/signup');
 var signinRouter = require('./routes/signin');
 var redis=require('./models/db_redisconfig.js');
 
+var adminArticleRouter = require('./routes/admin/article');
+
 var app = express();
 
 var help = {
@@ -46,6 +48,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/signup', signupRouter);
 app.use('/signin', signinRouter);
+app.use('/admin/article', adminArticleRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
