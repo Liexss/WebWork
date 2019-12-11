@@ -34,7 +34,10 @@
 	width: 13rem;
 	z-index: 50;
 }
-
+#changerow{
+	background-color: yellow;
+	background:url(../img/changeimg.jpg);
+}
 #newTextrow {
 	padding-bottom: 3rem;
 	padding-top: 3rem;

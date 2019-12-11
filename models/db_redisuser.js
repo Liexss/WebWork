@@ -10,10 +10,18 @@ const inserttokenHandler = async (vals) =>new Promise((resolve, reject) =>  {
 })
 
 const searchtokenHandler = async (vals) =>new Promise((resolve, reject) =>  {
-
+  client.exists(vals.token,function(err,data){
+    if(err) console.log(err);
+    if(data==1){
+      resolve({ans:true});
+    }
+    else {
+      resolve({ans:false});
+    }
+  });
 })
 const updatetokenHandler = async (vals) =>new Promise((resolve, reject) =>  {
-
+  client.expire(vals.token,60*20);
 })
 
 
