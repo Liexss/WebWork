@@ -1,13 +1,14 @@
 const pool = require('./db_mysqlconfig') //引入上面所讲的数据库基础配置
 
 // 增添文章
-const insertArticleHandler = async (vals) => new Promise((resolve, reject) => {
+const insertNewsHandler = async (vals) => new Promise((resolve, reject) => {
   pool.getConnection((err, connection) => {
     err && console.log("连接失败");
-    const table = 'article';
+    const table = 'news';
 
     connection.beginTransaction(err => {
       if (err) reject('开启事务失败');
+      vals.news_time = newDate();
       console.log(vals)
       connection.query(`insert into ${table} set ?`, vals, (e, rows) => {
         if (e) return connection.rollback(() => {
@@ -24,10 +25,10 @@ const insertArticleHandler = async (vals) => new Promise((resolve, reject) => {
 });
 
 // 文章title查重
-const searchArticleHandler = async vals => new Promise((resolve, reject) => {
+const searchNewsHandler = async vals => new Promise((resolve, reject) => {
   pool.getConnection((err, connection) => {
     err && console.log('连接失败');
-    const table = 'article';
+    const table = 'news';
     connection.query(`select * from ${table} where ?`, vals, (e, result) => {
       e && console.log('查询失败');
       connection.release();
@@ -38,6 +39,10 @@ const searchArticleHandler = async vals => new Promise((resolve, reject) => {
 });
 
 module.exports = {
-  insertArticleHandler,
-  searchArticleHandler,
+  insertNewsHandler,
+  searchNewsHandler,
+}
+
+function newDate(t = new Date()) {
+  return [t.getFullYear(), t.getMonth() + 1, t.getDate()].join('-');
 }
