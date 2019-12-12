@@ -1,3 +1,13 @@
+body{
+		    width: 100%;
+		    height: 100vh;	/* 重点一 */
+		    margin: 0 auto;
+		    background-image: url(../img/backgroud.png);
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		     /* 重点二 */
+		    overflow: auto;
+}
 #topbar{
 	background-color: rgb(141,30,30);
 }
@@ -11,13 +21,20 @@
 }
 #newnavbar{
 	background-color:rgb(141,30,30); 
+	padding:0;
+}
+#newnavbar a{
+	padding:16px 8px 16px 8px;
 }
 #navbaritem ul li a{
-	color: white;
+	color: rgba(255,255,255,.5);
 	font-size: 1.2rem;
 }
 #navbaritem ul .nav1{
 	margin-right: 6rem;
+}
+.navbar-nav .active{
+	color: #fff!important;
 }
 #cardrow{
 	margin-top: 3rem;
@@ -52,6 +69,11 @@
 	width: 1.5rem;
 	height: 1.29rem;
 	margin:10% 0% 13% 0;
+}
+.peopleimg{
+	width: 1.19rem;
+	height: 1.4rem;
+	margin:10% 0% 12% 0;
 }
 #dangshow{
 	margin:0 auto;

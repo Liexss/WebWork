@@ -1,0 +1,56 @@
+/*body{
+		    width: 100%;
+		    height: 100vh;
+		    margin: 0 auto;
+		    background-image: url(../img/backgroud.png);
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		    overflow: auto;
+}*/
+#topbar{
+	background-color: rgb(141,30,30);
+}
+#back{
+	color: white;
+	text-decoration: none;
+}
+#xuline{
+	background: linear-gradient(0deg,  rgb(141,30,30) , #F5F5F5 50%, #F5F5F5 50%, rgb(141,30,30));
+	height: 0.3rem;
+}
+
+/*navbar begin*/
+#newnavbar{
+	background-color:rgb(141,30,30); 
+	padding:0;
+}
+#newnavbar a{
+	padding:16px 8px 16px 8px;
+}
+#navbaritem ul li a{
+	color: rgba(255,255,255,.5);
+	font-size: 1.2rem;
+}
+#navbaritem ul .nav1{
+	margin-right: 6rem;
+}
+.navbar-nav .active{
+	color: #fff!important;
+}
+/*navbar end*/
+
+/*foot begin*/
+#footrow {
+	background-color: rgb(133, 33, 37);
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	margin-top:4rem;
+}
+
+.footcoin {}
+
+.blockquote {
+	font-size: 1rem;
+}
+/*foot end*/
+
