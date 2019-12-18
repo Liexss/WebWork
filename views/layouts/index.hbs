@@ -9,10 +9,29 @@
   <link rel='stylesheet' href='/static/stylesheets/layout.css' />
   <link rel='stylesheet' href='/static/stylesheets/sign.css' />
 </head>
-
 <body>
+  <h1>Hello <span id="usr">{{usr}}</span></h1>
+  <p>Welcome to HZNU</p>
+
+  <a href="/signin">前往登陆</a>
+
+  {{#each users}}
+  <ul>
+    <li>email: {{this.email}}</li>
+    <li>pwd: {{this.pwd}}</li>
+  </ul>
+  {{/each}}
+
+  <script>
+    window.onload = function() {
+      axios.get('/usr').then(r => {
+        //console.log(r.data)
+        let usr = document.getElementById('usr')
+        usr.innerText = r.data.usr
+      })
+    }
+  </script>
   <script src="/static/javascripts/axios.min.map.js"></script>
-  {{{body}}}
   <script>
     axios.defaults.baseURL = 'http://localhost:3000';
     axios.interceptors.request.use(function (config) {

@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   insertNewsHandler,
   searchNewsHandler,
-} = require('../../models/db_mysqlnews');
+} = require('../../models/admin/sql_news');
 
 router.post('/add', async (req, res) => {
   // console.log(req.body)
