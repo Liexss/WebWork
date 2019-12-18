@@ -6,8 +6,7 @@ const render = require('../utils/render').indexRender;
 
 /* GET index page. */
 router.get('/', function (req, res) {
-  console.log(1)
-  render.get(res)
+  res.render('layout', {layout: 'index',usr:'???'});
 });
 
 router.get('/usr', auth, (req, res) => {

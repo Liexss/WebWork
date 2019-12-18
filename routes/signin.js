@@ -7,8 +7,8 @@ const render = require('../utils/render').signinRender;
 const secret = require('../utils/config').secrept_jwt;
 
 /* GET signin page. */
-router.get('/', (req, res) => {
-  render.get(res)
+router.get('/', (req, res,next) => {
+  res.render('layout', {layout: 'signin',title: 'Sign in'});
 });
 
 router.get('/verify', async (req, res) => {
