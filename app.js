@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 var signupRouter = require('./routes/signup');
 var signinRouter = require('./routes/signin');
 var redis=require('./models/db_redisconfig.js');
+var adminLoginRouter = require('./routes/admin/login');
 
 var adminArticleRouter = require('./routes/admin/news');
 
@@ -49,6 +50,7 @@ app.use('/', indexRouter);
 app.use('/signup', signupRouter);
 app.use('/signin', signinRouter);
 app.use('/admin/news', adminArticleRouter);
+app.use('/admin/login', adminLoginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

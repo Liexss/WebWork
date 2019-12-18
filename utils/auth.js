@@ -4,8 +4,7 @@ var client = require('.././models/db_redisconfig.js');
 
 module.exports = function (req, res, next) {
   var t = req.headers.authorization;
-
-  //console.log('auth:' + t)
+  console.log('auth:' + t)
 
   if (t) {
     jwt.verify(t, secret, (err, decoded) => {

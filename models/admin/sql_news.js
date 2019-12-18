@@ -1,4 +1,4 @@
-const pool = require('./db_mysqlconfig') //引入上面所讲的数据库基础配置
+const pool = require('../db_mysqlconfig') //引入上面所讲的数据库基础配置
 
 // 增添文章
 const insertNewsHandler = async (vals) => new Promise((resolve, reject) => {
@@ -38,11 +38,11 @@ const searchNewsHandler = async vals => new Promise((resolve, reject) => {
   })
 });
 
+function newDate(t = new Date()) {
+  return [t.getFullYear(), t.getMonth() + 1, t.getDate()].join('-');
+}
+
 module.exports = {
   insertNewsHandler,
   searchNewsHandler,
-}
-
-function newDate(t = new Date()) {
-  return [t.getFullYear(), t.getMonth() + 1, t.getDate()].join('-');
 }
