@@ -8,7 +8,7 @@ const decrypt = require('../../utils/crypto').decrypt;
 const { searchuserHandler, selNameById } = require('../../models/db_mysqluser');
 
 // 身份认证
-router.post('/', auth, async (req, res) => {
+router.get('/', auth, async (req, res) => {
   let doc = await selNameById({user_id: req.curuser_id});
   let user_name = doc.result[0].user_name;
   res.send({ result: 1, msg: `欢迎，${user_name}！`, user_name });

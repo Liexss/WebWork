@@ -1,24 +1,61 @@
 const express = require('express');
 const router = express.Router();
-const {
-  insertNewsHandler,
-  searchNewsHandler,
-} = require('../../models/admin/sql_news');
 
-router.post('/add', async (req, res) => {
-  // console.log(req.body)
-  user_id = '123';
-  let { title, type, html, raw } = req.body;
+const { selnewsSql, addnewsSql, updatenewsSql } = require('../../models/admin/sql_news');
+const { selNameById } = require('../../models/db_mysqluser');
+const auth = require('../../utils/auth');
+
+router.post('/', auth, async (req, res) => {
+  console.log(req.body)
+  let reqData = req.body;
+  let sqlData = {};
+  reqData.forEach(v => {
+    sqlData[v.key] = v.value;
+  });
+  console.log(sqlData)
+
+  // 文章查询
+  let data = await selnewsSql(sqlData);
+  console.log('查询到的文章：' + data.length + '篇')
+  res.send({ result: 1, data, msg: `文章查询成功！` });
+});
+
+router.post('/add', auth, async (req, res) => {
+  let { title, type, content, raw } = req.body;
 
   // 文章title查重
-  let doc = await searchNewsHandler({ news_name: title });
-  console.log('doc:' + JSON.stringify(doc))
-  if (doc.length) return res.send({ status: 0, msg: '文章已存在！' });
+  let doc = await selnewsSql({ news_name: title });
+  console.log('已存在文章：' + JSON.stringify(doc))
+  if (doc.length) return res.send({ result: 0, msg: '文章标题重复！' });
+
+  // 用户名查询
+  let namedoc = await selNameById({ user_id: req.curuser_id });
+  let user_name = namedoc.result[0].user_name;
 
   // 添加文章
-  let result = await insertNewsHandler({ news_name: title, type, news_content: html, news_raw: raw, user_id });
-  if (result.status = 'success') res.send({ status: result.status, msg: '添加文章成功！' });
-  else res.send({ status: 'error', msg: '文章添加失败！' })
+  let r = await addnewsSql({ news_name: title, type, news_content: content, news_raw: raw, user_id: req.curuser_id, user_name });
+  if (r.result === 1) res.send({ result: 1, msg: '文章添加成功！' });
+  else res.send({ result: 0, msg: '文章添加失败！' });
+});
+
+router.post('/update', auth, async (req, res) => {
+  let { title, type, content, raw, news_id } = req.body;
+
+  // 文章title查重
+  let doc = await selnewsSql({ news_name: title });
+  console.log('已存在文章：' + JSON.stringify(doc))
+  if (doc.length) return res.send({ result: 0, msg: '文章标题重复！' });
+
+  // 用户名查询
+  let namedoc = await selNameById({ user_id: req.curuser_id });
+  let user_name = namedoc.result[0].user_name;
+
+  // 更新文章
+  let set = { news_name: title, type, news_content: content, news_raw: raw, user_id: req.curuser_id, user_name };
+  let where = { news_id };
+  let r = await updatenewsSql(set, where);
+  if (r.result === 1) res.send({ result: 1, msg: '文章更新成功！' });
+  else res.send({ result: 0, msg: '文章更新失败！' });
 });
 
 module.exports = router;
