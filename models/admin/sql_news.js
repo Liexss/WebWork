@@ -12,11 +12,12 @@ const addnewsSql = async (vals) => new Promise((resolve, reject) => {
       connection.query(`insert into news set ?`, vals, (e, rows) => {
         if (e) return connection.rollback(() => {
           console.log('插入失败数据回滚');
+          resolve({ result: 0 });
         });
         connection.commit(error => {
           if (error) console.log('事务提交失败');
           connection.release();
-          resolve({ rows, result: 1 });
+          resolve({ result: 1 });
         });
       });
     });
@@ -49,15 +50,39 @@ const updatenewsSql = async (set, where) => new Promise((resolve, reject) => {
     connection.beginTransaction(err => {
       if (err) reject('开启事务失败');
       set.update_time = newDate();
-      
+
       connection.query(`update news set ? where ?`, [set, where], (e, rows) => {
         if (e) return connection.rollback(() => {
-          console.log('插入失败数据回滚');
+          console.log('更新失败数据回滚');
+          resolve({ result: 0 });
         });
         connection.commit(error => {
           if (error) console.log('事务提交失败');
           connection.release();
-          resolve({ rows, result: 1 });
+          resolve({ result: 1 });
+        });
+      });
+    });
+  });
+}).catch(error => console.log(error));
+
+// 删除文章
+const deletenewsSql = async vals => new Promise((resolve, reject) => {
+  pool.getConnection((err, connection) => {
+    err && console.log("连接失败");
+
+    connection.beginTransaction(err => {
+      if (err) reject('开启事务失败');
+
+      connection.query(`delete from news where ?`, vals, (e, rows) => {
+        if (e) return connection.rollback(() => {
+          console.log('删除失败数据回滚');
+          resolve({ result: 0 });
+        });
+        connection.commit(error => {
+          if (error) console.log('事务提交失败');
+          connection.release();
+          resolve({ result: 1 });
         });
       });
     });
@@ -68,4 +93,5 @@ module.exports = {
   addnewsSql,
   selnewsSql,
   updatenewsSql,
+  deletenewsSql,
 }
