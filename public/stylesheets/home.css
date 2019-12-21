@@ -1,3 +1,6 @@
+a{
+	text-decoration: none!important;
+}
 #navbar1 {
 	background-color: rgb(127, 3, 3);
 	color: white;
@@ -61,7 +64,7 @@
 }
 
 #card {
-	padding: 10px 15px 10px 15px;
+	padding: 10px 0px 10px 0px;
 }
 
 .anncard1:nth-child(even) {
@@ -112,7 +115,6 @@
 	padding-top: 2rem;
 }
 
-.footcoin {}
 
 .blockquote {
 	font-size: 1rem;

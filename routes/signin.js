@@ -13,11 +13,11 @@ router.get('/', (req, res,next) => {
 
 router.get('/verify', async (req, res) => {
   let { usr, pwd } = url.parse(req.url, true).query;
-  //console.log(JSON.stringify(url.parse(req.url, true).query))
+  console.log(JSON.stringify(url.parse(req.url, true).query))
 
   // 用户查询
   const User = require('../models/db_mysqluser');
-  const doc = await User.searchuserHandler({ user_id: usr });
+  const doc = await User.searchexisuserHandler({ user_id: usr,is_post:0 });
   //console.log(doc.result[0].user_id);
   console.log(doc);
   // 登录检测
@@ -28,7 +28,7 @@ router.get('/verify', async (req, res) => {
     else {
       const t = jwt.sign({ usr, pwd: r }, secret, { expiresIn: 60 * 60 * 3 });
 
-      //console.log('token:' + t)
+      console.log('token:' + t)
       res.send({ result: 1, msg: '登录成功', admin: doc.result[0].user_id, token: t });
     }
   } else {
