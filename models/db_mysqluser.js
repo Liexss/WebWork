@@ -41,16 +41,10 @@ const searchuserHandler = async (vals) => new Promise((resolve, reject) => {
       console.log("连接失败");
     }
     const tablename = 'user'; //动态table(表)名称
-<<<<<<< HEAD
-    //执行INSERT插入操作
-    connection.query(`SELECT * FROM ${tablename} WHERE ?`, vals, (e,result) => {
-      if(e) {
-=======
     //开启事务
     //执行INSERT插入操作
     connection.query(`SELECT * FROM ${tablename} WHERE type=${vals.type} and ?`, vals.user_id, (e, result) => {
       if (e) {
->>>>>>> 3976dc437a227b1e07807701aebab38006e78af4
         console.log("查询失败");
       } else {
         connection.release();  // 释放链接
@@ -59,30 +53,7 @@ const searchuserHandler = async (vals) => new Promise((resolve, reject) => {
       }
     })
   })
-<<<<<<< HEAD
-})
-const searchexisuserHandler = async (vals) =>new Promise((resolve, reject) =>  {
-  console.log(vals);
-  pool.getConnection((err, connection) => {
-    if(err){
-      console.log("连接失败");
-    }
-    const tablename = 'user'; //动态table(表)名称
-    //执行INSERT插入操作
-    connection.query(`SELECT * FROM ${tablename} WHERE user_id= ? and is_post= ?`, [vals.user_id,vals.is_post], (e,result) => {
-      if(e) {
-        console.log("查询失败");
-      } else {
-        connection.release();  // 释放链接
-        //console.log({result,vals});
-        resolve({result});
-      }
-    })
-  })
-})
-=======
 });
->>>>>>> 3976dc437a227b1e07807701aebab38006e78af4
 
 const showcollegeHandler = async (vals) => new Promise((resolve, reject) => {
   pool.getConnection((err, connection) => {
@@ -119,7 +90,6 @@ const selNameById = async (vals) => new Promise((resolve, reject) => {
 module.exports = {
   insertuserHandler,
   searchuserHandler,
-  searchexisuserHandler,
   showcollegeHandler,
   selNameById
 };
