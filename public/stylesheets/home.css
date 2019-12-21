@@ -1,3 +1,6 @@
+a{
+	text-decoration: none!important;
+}
 #navbar1 {
 	background-color: rgb(127, 3, 3);
 	color: white;
@@ -61,7 +64,11 @@
 }
 
 #card {
-	padding: 10px 15px 10px 15px;
+	padding: 10px 0px 10px 0px;
+}
+.cardleft{
+	margin-right: 7px!important;
+	margin-left: 7px!important;
 }
 
 .anncard1:nth-child(even) {
@@ -87,6 +94,10 @@
 
 .card-title {
 	color: rgb(124, 0, 0);
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .card-text {
@@ -112,7 +123,6 @@
 	padding-top: 2rem;
 }
 
-.footcoin {}
 
 .blockquote {
 	font-size: 1rem;

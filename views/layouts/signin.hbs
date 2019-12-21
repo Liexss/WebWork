@@ -16,16 +16,17 @@
     <div class="g-signup">
       <div class="form-auto">
         <div class="form-header">
-          <a href="/signup">Sign up</a>
-          <a href="javascript: void()" class="form-on">Sign in</a>
+          <a href="/signup">注册</a>
+          <a href="javascript: void()" class="form-on">登陆</a>
         </div>
         <form name="signin">
           <div class="from-row">
-            <label for="email" class="from-label">E-mail</label>
-            <input type="email" id="email" name="email" class="from-input" required />
+            <label for="id" class="from-label">用户名
+            </label>
+            <input type="text" id="Inputid" name="id" class="from-input" required />
           </div>
           <div class="from-row">
-            <label for="pwd" class="from-label">Password</label>
+            <label for="pwd" class="from-label">密码</label>
             <input type="password" id="pwd" name="pwd" class="from-input" required />
           </div>
           <div class="from-row">
@@ -46,9 +47,9 @@
     const submitBtn = document.getElementsByClassName('from-btn')[0];
     submitBtn.addEventListener('click', (e) => {
       e.preventDefault()
-      let email = document.signin.email.value
+      let usr = document.signin.id.value
       let pwd = document.signin.pwd.value
-      let data = { params: { email, pwd } }
+      let data = { params: { usr, pwd } }
       axios.get('/signin/verify', data).then((r) => {
         console.log(r.data);
         let { result, msg} = r.data
@@ -56,7 +57,7 @@
           // axios.defaults.headers.common['Authorization'] = r.data.token
           Msg(msg, result)
           localStorage.setItem(toString(r.data.admin)+"ex09_t", r.data.token);
-          //window.location = '/';
+          window.location = '/home';
         } else Msg(msg)
       });
     });

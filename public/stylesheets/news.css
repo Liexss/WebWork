@@ -39,9 +39,9 @@ body{
 #cardrow{
 	margin-top: 3rem;
 }
-#cardi{
+/* #cardi{
 	//height:30rem!important;
-}
+} */
 .newcardcontent{
 	background-color: rgb(165,78,78);
 }
@@ -172,7 +172,6 @@ body{
 	margin-top:4rem;
 }
 
-.footcoin {}
 
 .blockquote {
 	font-size: 1rem;

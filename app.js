@@ -9,6 +9,8 @@ var cors = require('cors');
 
 
 var indexRouter = require('./routes/index');
+var HomeRouter = require("./routes/home");
+var NewsRouter = require("./routes/news");
 var signupRouter = require('./routes/signup');
 var signinRouter = require('./routes/signin');
 // var redis=require('./models/db_redisconfig.js');
@@ -48,6 +50,8 @@ app.use(cookieParser());
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/home', HomeRouter);
+app.use('/news', NewsRouter);
 app.use('/signup', signupRouter);
 app.use('/signin', signinRouter);
 app.use('/admin/news', adminArticleRouter);
