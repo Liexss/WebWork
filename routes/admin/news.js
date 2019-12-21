@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { selnewsSql, addnewsSql, updatenewsSql, deletenewsSql } = require('../../models/admin/sql_news');
+const { selnewsSql, addnewsSql, updatenewsSql, deletenewsSql, selupdateSql } = require('../../models/admin/sql_news');
 const { selNameById } = require('../../models/db_mysqluser');
 const auth = require('../../utils/auth');
 
@@ -42,7 +42,8 @@ router.post('/update', auth, async (req, res) => {
   let { title, type, content, raw, news_id } = req.body;
 
   // 文章title查重
-  let doc = await selnewsSql({ news_name: title });
+  let doc = await selupdateSql({ news_name: title }, news_id);
+
   console.log('已存在文章：' + JSON.stringify(doc))
   if (doc.length) return res.send({ result: 0, msg: '标题重复！' });
 

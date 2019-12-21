@@ -42,6 +42,19 @@ const selnewsSql = async vals => new Promise((resolve, reject) => {
   })
 }).catch(error => console.log(error));
 
+// 更新文章时查重
+const selupdateSql = async (vals, not) => new Promise((resolve, reject) => {
+  pool.getConnection((err, connection) => {
+    err && console.log('连接失败');
+
+    connection.query(`select * from news where ? and news_id != ${not}`, vals, (e, doc) => {
+      e && console.log('查询失败');
+      connection.release();
+      resolve(doc);
+    })
+  })
+});
+
 // 更新文章
 const updatenewsSql = async (set, where) => new Promise((resolve, reject) => {
   pool.getConnection((err, connection) => {
@@ -94,4 +107,5 @@ module.exports = {
   selnewsSql,
   updatenewsSql,
   deletenewsSql,
+  selupdateSql,
 }

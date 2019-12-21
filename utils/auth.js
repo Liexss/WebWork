@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const secret = require('./config').secrept_jwt;
-var client = require('../models/db_redisconfig.js');
+// var client = require('../models/db_redisconfig.js');
 
 module.exports = function (req, res, next) {
   var t = req.headers.authorization;

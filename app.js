@@ -11,7 +11,7 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var signupRouter = require('./routes/signup');
 var signinRouter = require('./routes/signin');
-var redis=require('./models/db_redisconfig.js');
+// var redis=require('./models/db_redisconfig.js');
 var adminLoginRouter = require('./routes/admin/login');
 
 var adminArticleRouter = require('./routes/admin/news');
