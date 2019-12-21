@@ -1,0 +1,13 @@
+<div class="row justify-content-center">
+    {{#each Collegenews}}
+    <div class="col-md-2 cardleft" id="card">
+        <div class="card shadow">
+            <img src="/static/img/2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-title">{{this.news_name}}</p>
+                <a href="#" class="btn btn-primary">详情点击</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

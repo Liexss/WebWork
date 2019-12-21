@@ -66,6 +66,10 @@ a{
 #card {
 	padding: 10px 0px 10px 0px;
 }
+.cardleft{
+	margin-right: 7px!important;
+	margin-left: 7px!important;
+}
 
 .anncard1:nth-child(even) {
 	background-color: rgb(201, 146, 146)!important;
@@ -90,6 +94,10 @@ a{
 
 .card-title {
 	color: rgb(124, 0, 0);
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .card-text {
