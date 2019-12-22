@@ -1,16 +1,17 @@
-
 {{#each Teachenew}}
 <div class="col-md-4">
-<div class="mycard">
-    <div class="mycard-body">
-    <a href="#"><h5 class="mycard-title">{{news_name}}</h5></a>
-    {{!-- <p class="mycard-content"> --}}
-    {{!-- &nbsp;12月5日上午，杭州市班研究中心授牌仪式暨杭州市中小学心理健康教育教师培训班、第三批杭州市中小学班主任工作室领衔人及发展培育对象培训班开班典礼在仓前校区举行开班典礼。</p>  --}}
-    <div class="mycard-foot">
-        <img  src="/static/img/clock.png" alt="" id="cardclock">
-        <p class="mycard-date d-inline" >{{update_time}}</p>
+    <div class="mycard">
+        <div class="mycard-body">
+            <a href="#">
+                <h5 class="mycard-title">{{news_name}}</h5>
+            </a>
+            {{!-- <p class="mycard-content"> --}}
+            {{!-- &nbsp;12月5日上午，杭州市班研究中心授牌仪式暨杭州市中小学心理健康教育教师培训班、第三批杭州市中小学班主任工作室领衔人及发展培育对象培训班开班典礼在仓前校区举行开班典礼。</p>  --}}
+            <div class="mycard-foot">
+                <img src="/static/img/clock.png" alt="" id="cardclock">
+                <p class="mycard-date d-inline">{{update_time}}</p>
+            </div>
+        </div>
     </div>
-    </div>             
-</div>
 </div>
 {{/each}}

@@ -1,9 +1,9 @@
 // index
 class indexRender {
-  get(res, usr = '???') {
-    return res.render('index', {
-      title: 'Index',
-      usr,
+  get(res, usr = "???") {
+    return res.render("index", {
+      title: "Index",
+      usr
     });
   }
 }
@@ -11,36 +11,36 @@ class indexRender {
 // signup
 class signupRender {
   constructor() {
-    this.layout = 'sign'
-    this.body = 'signup'
+    this.layout = "sign";
+    this.body = "signup";
   }
 
   get(res) {
     return res.render(this.body, {
       layout: this.layout,
-      title: 'Sign up',
+      title: "Sign up"
     });
   }
 
   err(res, text) {
     return res.render(this.body, {
       layout: this.layout,
-      title: 'Sign up',
+      title: "Sign up",
       msg: {
         text: text,
-        status: 'error'
-      },
+        status: "error"
+      }
     });
   }
 
   suc(res, text) {
-    return res.render('signin', {
+    return res.render("signin", {
       layout: this.layout,
-      title: 'Sign in',
+      title: "Sign in",
       msg: {
         text: text,
-        status: 'success'
-      },
+        status: "success"
+      }
     });
   }
 }
@@ -48,14 +48,14 @@ class signupRender {
 // signin
 class signinRender {
   constructor() {
-    this.layout = 'sign'
-    this.body = 'signin'
+    this.layout = "sign";
+    this.body = "signin";
   }
 
   get(res) {
     return res.render(this.body, {
       layout: this.layout,
-      title: 'Sign in',
+      title: "Sign in"
     });
   }
 
@@ -63,19 +63,19 @@ class signinRender {
     return res.send({
       result: 0,
       msg: text
-    })
+    });
   }
 
   suc(res, text) {
     return res.send({
       result: 1,
       msg: text
-    })
+    });
   }
 }
 
 module.exports = {
   indexRender: new indexRender(),
   signupRender: new signupRender(),
-  signinRender: new signinRender(),
-}
+  signinRender: new signinRender()
+};
