@@ -9,6 +9,7 @@
   <link rel='stylesheet' href='/static/stylesheets/layout.css' />
   <link rel='stylesheet' href='/static/stylesheets/sign.css' />
 </head>
+
 <body>
   <h1>Hello <span id="usr">{{usr}}</span></h1>
   <p>Welcome to HZNU</p>
@@ -23,7 +24,7 @@
   {{/each}}
 
   <script>
-    window.onload = function() {
+    window.onload = function () {
       axios.get('/usr').then(r => {
         //console.log(r.data)
         let usr = document.getElementById('usr')

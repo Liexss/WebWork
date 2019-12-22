@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 const formidable = require('formidable');
 const fs = require('fs');
@@ -38,8 +38,8 @@ router.post('/', auth, async (req, res) => {
       allFile.push(file);
       console.log('file: ' + file)
     })
-    .on('progress', function (bytesReceived, bytesExpected) {
-      uploadprogress = bytesReceived / bytesExpected * 100;         // 计算上传进度
+    .on("progress", function(bytesReceived, bytesExpected) {
+      uploadprogress = (bytesReceived / bytesExpected) * 100; // 计算上传进度
     })
     .on('end', async function () {                    // 上传完成
       console.log('-> upload done');
@@ -68,7 +68,7 @@ router.post('/', auth, async (req, res) => {
       }
       if (!deleteList.length) res.send({ result: 0, msg: '图片未有更新！' });
     })
-    .on('error', function (err) {
+    .on("error", function(err) {
       console.log(err);
       res.send({ result: 0, msg: '上传失败！' });
     });

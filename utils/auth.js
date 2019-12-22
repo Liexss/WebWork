@@ -1,8 +1,8 @@
-const jwt = require('jsonwebtoken');
-const secret = require('./config').secrept_jwt;
+const jwt = require("jsonwebtoken");
+const secret = require("./config").secrept_jwt;
 // var client = require('../models/db_redisconfig.js');
 
-module.exports = function (req, res, next) {
+module.exports = function(req, res, next) {
   var t = req.headers.authorization;
   // console.log(t)
 
@@ -12,7 +12,7 @@ module.exports = function (req, res, next) {
       if (err) {
         console.log('jwt: Invalid token');
         //token已过期或不存在
-        res.send({ result: 0, msg: 'Invalid token' });
+        res.send({ result: 0, msg: "Invalid token" });
       } else {
         //token仍在有效刷新期
         req.curuser_id = decoded.user_id;
@@ -24,4 +24,4 @@ module.exports = function (req, res, next) {
     console.log('jwt: No token')
     res.send({ result: 0, msg: 'No token' });
   }
-}
+};

@@ -1,84 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/newscontent.css" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/newscontent.css">
+    <title>新闻内容</title>
+  </head>
 
-  <title>新闻内容</title>
-</head>
-
-<body>
-	<div class="container-fluid" id="topbar">
-    <div class="row justify-content-center align-items-center">
-      <nav class="col-md-2.5 my-4">
-        <img src="img/bottomlogo.png" style="width: auto;height: auto;max-width: 100%;max-height:100%;">
-      </nav>
-      <form class="form-inline col-md-6">
-        <div class="mx-auto">
-          <input class="form-control mr-sm-3" type="text" placeholder="Search" aria-label="Search" style="width:20rem;">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">搜索</button>
+  <body>
+    <div class="container-fluid" id="topbar">
+      <div class="row justify-content-center align-items-center">
+        <nav class="col-md-2.5 my-4">
+          <img
+            src="img/bottomlogo.png"
+            style="width: auto;height: auto;max-width: 100%;max-height:100%;"
+          />
+        </nav>
+        <form class="form-inline col-md-6">
+          <div class="mx-auto">
+            <input
+              class="form-control mr-sm-3"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+              style="width:20rem;"
+            />
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+              搜索
+            </button>
+          </div>
+        </form>
+        <div class="col-md-2">
+          <img
+            class="mr-3"
+            src="img/wechatnew.png"
+            alt=""
+            style="width: auto;height: auto;max-width: 12%;max-height:12%;"
+          />
+          <img
+            class="mr-3"
+            src="img/microblognew.png"
+            alt=""
+            style="width: auto;height: auto;max-width: 12%;max-height: 12%;"
+          />
+          <a href="#" id="back">退出</a>
         </div>
-      </form>
-      <div class="col-md-2">
-        <img class="mr-3" src="img/wechatnew.png" alt="" style="width: auto;height: auto;max-width: 12%;max-height:12%;">
-        <img class="mr-3" src="img/microblognew.png" alt="" style="width: auto;height: auto;max-width: 12%;max-height: 12%;">
-        <a href="#" id="back">退出</a>
       </div>
     </div>
-  </div>
-  <div id="xuline"></div>
-  <nav class="navbar navbar-expand-lg" id="newnavbar">
-    <div class="collapse navbar-collapse justify-content-md-center" id="navbaritem">
-      <ul class="navbar-nav">
-        <li class="nav-item nav1">
-          <a class="nav-link active" href="#">首页</a>
-        </li>
-        <li class="nav-item nav1">
-          <a class="nav-link" href="#">师大要闻</a>
-        </li>
-        <li class="nav-item nav1">
-          <a class="nav-link" href="#">党建文化</a>
-        </li>
-        <li class="nav-item nav1">
-          <a class="nav-link" href="#">媒体师大</a>
-        </li>
-        <li class="nav-item nav1">
-          <a class="nav-link" href="#">教学科研</a>
-        </li>
-        <li class="nav-item nav1">
-          <a class="nav-link" href="#">学术研究</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">科研论文</a>
-        </li>
-      </ul>
+    <div id="xuline"></div>
+    <nav class="navbar navbar-expand-lg" id="newnavbar">
+      <div
+        class="collapse navbar-collapse justify-content-md-center"
+        id="navbaritem"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item nav1">
+            <a class="nav-link active" href="#">首页</a>
+          </li>
+          <li class="nav-item nav1">
+            <a class="nav-link" href="#">师大要闻</a>
+          </li>
+          <li class="nav-item nav1">
+            <a class="nav-link" href="#">党建文化</a>
+          </li>
+          <li class="nav-item nav1">
+            <a class="nav-link" href="#">媒体师大</a>
+          </li>
+          <li class="nav-item nav1">
+            <a class="nav-link" href="#">教学科研</a>
+          </li>
+          <li class="nav-item nav1">
+            <a class="nav-link" href="#">学术研究</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">科研论文</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid" id="footrow">
+      <blockquote class="blockquote text-center">
+        <p class="mb-0 text-white" style="padding:10px 0 10px 0;">
+          地址：浙江省杭州市余杭区仓前街道余杭塘路2318号 邮编：311121
+          联系电话：0571-28865012
+        </p>
+        <p class="mb-0 text-white" style="padding:0px 0 10px 0;">
+          本科招生热线：0571-28865193 研究生招生热线：0571-28865012
+        </p>
+        <footer class="blockquote-footer text-white">
+          版权所有
+          <cite title="Source Title"
+            >杭州师范大学 Copyright @ 2008 公安备案号 33011002011919
+            浙ICP备11056902号</cite
+          >
+        </footer>
+      </blockquote>
     </div>
-  </nav>
-  <div class="container-fluid" id="footrow">
-    <blockquote class="blockquote text-center">
-      <p class="mb-0 text-white" style="padding:10px 0 10px 0;">地址：浙江省杭州市余杭区仓前街道余杭塘路2318号 邮编：311121 联系电话：0571-28865012
-      </p>
-      <p class="mb-0 text-white" style="padding:0px 0 10px 0;">本科招生热线：0571-28865193 研究生招生热线：0571-28865012</p>
-      <footer class="blockquote-footer text-white">版权所有 <cite title="Source Title">杭州师范大学 Copyright @ 2008 公安备案号
-          33011002011919 浙ICP备11056902号</cite></footer>
-    </blockquote>
-  </div>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
-    integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
+      integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
