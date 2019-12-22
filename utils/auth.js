@@ -4,13 +4,13 @@ const secret = require('./config').secrept_jwt;
 
 module.exports = function (req, res, next) {
   var t = req.headers.authorization;
-  console.log(t)
+  // console.log(t)
 
   if (t) {
     jwt.verify(t, secret, (err, decoded) => {
-      console.log('decoded:' + JSON.stringify(decoded))
+      console.log('jwt: ' + JSON.stringify(decoded))
       if (err) {
-        console.log(err);
+        console.log('jwt: Invalid token');
         //token已过期或不存在
         res.send({ result: 0, msg: 'Invalid token' });
       } else {
@@ -21,6 +21,7 @@ module.exports = function (req, res, next) {
     });
   } else {
     //请求无token
+    console.log('jwt: No token')
     res.send({ result: 0, msg: 'No token' });
   }
 }
