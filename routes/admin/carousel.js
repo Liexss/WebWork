@@ -38,7 +38,7 @@ router.post('/', auth, async (req, res) => {
       allFile.push(file);
       console.log('file: ' + file)
     })
-    .on("progress", function(bytesReceived, bytesExpected) {
+    .on("progress", function (bytesReceived, bytesExpected) {
       uploadprogress = (bytesReceived / bytesExpected) * 100; // 计算上传进度
     })
     .on('end', async function () {                    // 上传完成
@@ -50,7 +50,7 @@ router.post('/', auth, async (req, res) => {
         // 删除图片文件
         let img_path = await selcarouselbyidSql(deleteList);
         let r = delDir(img_path.data, imgPath);
-        if (r === 1) return res.send({result: 1, msg: '更新成功！'})
+        if (r === 1) return res.send({ result: 1, msg: '更新成功！' })
       }
       // 添加图片
       if (allFile.length) {
@@ -59,7 +59,10 @@ router.post('/', auth, async (req, res) => {
           let { name, path, size, type } = file;
           size = `${(size / 1024).toFixed(2)}KB`;
           name = name.split('.')[0];
-          sqlData.push([path, name, size, type]);
+          let splitpath = path.split('\\');
+          splitpath.splice(0, 1, 'static');
+          let rpath = splitpath.join('\\');
+          sqlData.push([rpath, name, size, type]);
         });
         console.log('sqlData: ' + JSON.stringify(sqlData))
         let r = await addcarouselSql(sqlData);
@@ -68,7 +71,7 @@ router.post('/', auth, async (req, res) => {
       }
       if (!deleteList.length) res.send({ result: 0, msg: '图片未有更新！' });
     })
-    .on("error", function(err) {
+    .on("error", function (err) {
       console.log(err);
       res.send({ result: 0, msg: '上传失败！' });
     });
@@ -81,27 +84,6 @@ function delDir(data, curPath) {
     fs.unlinkSync(v.path)
   });
   return 1;
-  // let files = [];
-  // if (fs.existsSync(path)) {
-  //   files = fs.readdirSync(path);
-  //   files.forEach((file, index) => {
-  //     let curPath = path + "/" + file;
-  //     if (fs.statSync(curPath).isDirectory()) {
-  //       delDir(curPath); //递归删除文件夹
-  //     } else {
-  //       fs.unlinkSync(curPath); //删除文件
-  //     }
-  //   });
-  // }
-}
-
-// 从img_path中提取img_name
-function getimgname(arrpath) {
-  let arrname = [];
-  arrpath.forEach(v => {
-    arrname.push(v.path.split('\\').pop().split('.').shift())
-  });
-  return arrname;
 }
 
 module.exports = router;
