@@ -88,47 +88,10 @@
         </div>
         <div class="newcontent row">
           <div class="col-md-10 m-auto">
-            <div class="row contentitem m-auto">
-              <div class="col-md-1">
-                <img  src="/static/img/clock.png" alt="" id="clock">
-              </div>
-              <div class="col-md-11">
-                <a>2019.12.05</a>
-                <a class="d-block">浙江在线：纪录片《丰子恺》</a>
-                <a class="d-block">青年影像节获奖记录当代青年人</a>
-              </div>
+            {{>newMedia}}
+            <div style="margin-top: 20px;">
+              <a class="more-text" href="#" style="margin: 0px!important;">>>更多>></a>
             </div>
-          <div class="row contentitem m-auto">
-              <div class="col-md-1">
-                <img  src="/static/img/clock.png" alt="" id="clock">
-              </div>
-              <div class="col-md-11">
-                <a>2019.12.05</a>
-                <a class="d-block">浙江在线：纪录片《丰子恺》</a>
-                <a class="d-block">青年影像节获奖记录当代青年人</a>
-              </div>
-            </div>
-          <div class="row contentitem m-auto">
-              <div class="col-md-1">
-                <img  src="/static/img/clock.png" alt="" id="clock">
-              </div>
-              <div class="col-md-11">
-                <a>2019.12.05</a>
-                <a class="d-block">浙江在线：纪录片《丰子恺》</a>
-                <a class="d-block">青年影像节获奖记录当代青年人</a>
-              </div>
-            </div>
-          <div class="row contentitem m-auto">
-              <div class="col-md-1">
-                <img  src="/static/img/clock.png" alt="" id="clock">
-              </div>
-              <div class="col-md-11">
-                <a>2019.12.05</a>
-                <a class="d-block">浙江在线：纪录片《丰子恺》</a>
-                <a class="d-block">青年影像节获奖记录当代青年人</a>
-              </div>
-            </div>
-          
           </div>
         </div>
       </div>
@@ -144,51 +107,20 @@
   </div>
   <div class="container-fluid" >
     <div class="row justify-content-center">
-      <div class="col-md-8 teachercol" >
-        <div class="row" id="teachernewrow">
-          <div class="col-md-4">
-            <div class="mycard">
-              <div class="mycard-body">
-                <a href="#"><h5 class="mycard-title">杭师大班主任研究中心在我校成立</h5></a>
-                <p class="mycard-content">
-                &nbsp;12月5日上午，杭州市班研究中心授牌仪式暨杭州市中小学心理健康教育教师培训班、第三批杭州市中小学班主任工作室领衔人及发展培育对象培训班开班典礼在仓前校区举行开班典礼。</p> 
-                <div class="mycard-foot">
-                  <img  src="/static/img/clock.png" alt="" id="cardclock">
-                  <p class="mycard-date d-inline" >12月23日</p>
-                </div>
-              </div>             
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="mycard">
-              <div class="mycard-body">
-                <a href="#"><h5 class="mycard-title">杭师大班主任研究中心在我校成立</h5></a>
-                <p class="mycard-content">
-                &nbsp;12月5日上午，杭州市班研究中心授牌仪式暨杭州市中小学心理健康教育教师培训班、第三批杭州市中小学班主任工作室领衔人及发展培育对象培训班开班典礼在仓前校区举行开班典礼。</p> 
-                <div class="mycard-foot">
-                  <img  src="/static/img/clock.png" alt="" id="cardclock">
-                  <p class="mycard-date d-inline" >12月23日</p>
-                </div>
-              </div>             
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="mycard">
-              <div class="mycard-body">
-                <a href="#"><h5 class="mycard-title">杭师大班主任研究中心在我校成立</h5></a>
-                <p class="mycard-content">
-                &nbsp;12月5日上午，杭州市班研究中心授牌仪式暨杭州市中小学心理健康教育教师培训班、第三批杭州市中小学班主任工作室领衔人及发展培育对象培训班开班典礼在仓前校区举行开班典礼。</p> 
-                <div class="mycard-foot">
-                  <img  src="/static/img/clock.png" alt="" id="cardclock">
-                  <p class="mycard-date d-inline" >12月23日</p>
-                </div>
-              </div>             
-            </div>
-          </div>
+      <div class="col-md-8">
+        <div class="row justify-content-end">
+          <a class="more-text" href="#">>>更多>></a>
         </div>
       </div>
     </div>
-    <div class="row justify-content-center" id="pagerow">
+    <div class="row justify-content-center">
+      <div class="col-md-8 teachercol" >
+        <div class="row" id="teachernewrow">
+        {{>newTeache}}
+        </div>
+      </div>
+    </div>
+    {{!-- <div class="row justify-content-center" id="pagerow">
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
           <li class="page-item disabled">
@@ -208,43 +140,23 @@
           </li>
         </ul>
       </nav>
-    </div>
-    <div class="row justify-content-center">
+    </div> --}}
+    <div class="row justify-content-center" id="learnrow">
       <div class="col-md-8 teachercol">
         <div class="row">
           <div class="col-md-8">
-            <p class="newstitle">学术预告</p>
-            <div class="newssubtitle">
-              <p class="d-inline">预告：激流教授谈“学科核心素养与体育教学创新”</p>
-              <p class="d-inline timeacho">12月23日</p>
+            <div class="row justify-content-between">
+              <div class="col-md-6"><p class="newstitle">学术研究</p></div>
+              <div class="col-md-6 m-auto"><a href="#" class="moreone">>>更多>></a></div>
             </div>
-            <div class="newssubtitle">
-              <p class="d-inline">预告：激流教授谈“学科核心素养与体育教学创新”</p>
-              <p class="d-inline timeacho">12月23日</p>
-            </div>
-            <div class="newssubtitle">
-              <p class="d-inline">预告：激流教授谈“学科核心素养与体育教学创新”</p>
-              <p class="d-inline timeacho">12月23日</p>
-            </div>
-            <div class="newssubtitle">
-              <p class="d-inline">预告：激流教授谈“学科核心素养与体育教学创新”</p>
-              <p class="d-inline timeacho">12月23日</p>
-            </div>
+            {{>newLearn}}
           </div>
           <div class="col-md-4">
-            <p class="newstitle">科研论文</p>
-            <div class="newssubtitle">
-              <p class="d-inline">钟国富（材料与化学化工学院）</p>
+            <div class="row justify-content-between">
+              <div class="col-md-6"><p class="newstitle">通知公告</p></div>
+              <div class="col-md-6 m-auto"><a href="#" class="moreone">>>更多>></a></div>
             </div>
-            <div class="newssubtitle">
-              <p class="d-inline">钟国富（材料与化学化工学院）</p>
-            </div>
-            <div class="newssubtitle">
-             <p class="d-inline">钟国富（材料与化学化工学院）</p>
-            </div>
-            <div class="newssubtitle">
-              <p class="d-inline">钟国富（材料与化学化工学院）</p>
-            </div>
+            {{>newNotice}}
           </div>
         </div>
       </div>
