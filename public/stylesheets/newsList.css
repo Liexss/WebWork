@@ -41,7 +41,7 @@ body {
 #navbaritem ul .nav1 {
   margin-right: 6rem;
 }
-.navbar-nav .active {
+.navbar-nav .active a{
   color: #fff !important;
 }
 /*navbar end*/

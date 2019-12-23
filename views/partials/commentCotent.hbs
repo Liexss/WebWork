@@ -1,0 +1,32 @@
+{{#each comment}}
+<div class="row">
+    <div class="comment">
+        <table class="comment-table" commentid="565854" commentparentid="-1">
+            <tbody>
+                <tr>
+                    <td class="left">
+                        <div class="avatar">
+                            <a style="position: relative;">
+                                <img src="/static/img/no-avatar.jpg"> </a>
+                            <div><a title="Master aryanc403" class="rated-user user-orange">{{this.user_name}}</a></div>
+                        </div>
+                    </td>
+                    <td class="right">
+                        <div class="info">
+                            <span class="item"><span class="format-humantime"
+                                    title="Dec/20/2019 21:21 UTC+8">{{this.comment_time}}</span></span>
+                        </div>
+                        <div class="comment-content comment-content-565854">
+                            <div class="moveup">
+                                <div class="ttypography">
+                                    <p><a>{{this.comment_content}}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{{/each}}

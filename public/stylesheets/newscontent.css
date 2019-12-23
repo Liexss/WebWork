@@ -1,55 +1,42 @@
-/*body{
-		    width: 100%;
-		    height: 100vh;
-		    margin: 0 auto;
-		    background-image: url(../img/backgroud.png);
-		    background-repeat: no-repeat;
-		    background-size: cover;
-		    overflow: auto;
-}*/
-#topbar{
-	background-color: rgb(141,30,30);
+#showtextrow{
+	margin-top: 1rem;
 }
-#back{
-	color: white;
-	text-decoration: none;
+#showtextrow p{
+	color: rgb(168, 75, 75);
 }
-#xuline{
-	background: linear-gradient(0deg,  rgb(141,30,30) , #F5F5F5 50%, #F5F5F5 50%, rgb(141,30,30));
-	height: 0.3rem;
+.mytext{
+	margin-right: 30px;
 }
-
-/*navbar begin*/
-#newnavbar{
-	background-color:rgb(141,30,30); 
-	padding:0;
+#teacherline {
+    height: 0.055rem;
+	background-color: rgb(165, 78, 78);
 }
-#newnavbar a{
-	padding:16px 8px 16px 8px;
+#showedit{
+	margin-top: 1rem;
 }
-#navbaritem ul li a{
-	color: rgba(255,255,255,.5);
-	font-size: 1.2rem;
+#commentrow{
+	margin-top: 1rem;
 }
-#navbaritem ul .nav1{
-	margin-right: 6rem;
+.comments .title {
+    color: #3B5998 !important;
+    font-size: 1.8em;
+    margin-bottom: 1em;
 }
-.navbar-nav .active{
-	color: #fff!important;
+.comment-table td.right {
+    text-align: left;
+    vertical-align: top;
+	padding: 0.5em;
+	color:rgb(168, 75, 75);
 }
-/*navbar end*/
-
-/*foot begin*/
-#footrow {
-	background-color: rgb(133, 33, 37);
-	padding-bottom: 0.5rem;
-	padding-top: 0.5rem;
-	margin-top:4rem;
+.avatar {
+    text-align: center;
+	font-size: smaller;
+	color:rgb(168, 75, 75);
 }
-
-
-.blockquote {
-	font-size: 1rem;
+.comment-table td.left {
+    /* vertical-align: top; */
+    text-align: center;
+    width: 150px;
+	padding: 0.5em;
+	color:rgb(168, 75, 75);
 }
-/*foot end*/
-

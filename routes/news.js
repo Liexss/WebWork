@@ -9,13 +9,15 @@ router.get("/", async (req, res) => {
   let Teachenew = await News.selnewsHandler({ type: "教学科研", num: 3 });
   let Learnnew = await News.selnewsHandler({ type: "学术研究", num: 4 });
   let Noticenew = await News.selnewsHandler({ type: "通知公告", num: 4 });
+  let Partynew = await News.selnewsHandler({ type: "党建文化", num: 6 });
   res.render("layout", {
     layout: "news",
     title: "杭师大主页",
     Medianew: Medianew,
     Teachenew: Teachenew,
     Learnnew: Learnnew,
-    Noticenew: Noticenew
+    Noticenew: Noticenew,
+    Partynew: Partynew
   });
 });
 

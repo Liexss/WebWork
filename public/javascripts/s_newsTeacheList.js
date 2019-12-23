@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $("#Teachenav").siblings('li').removeClass('active');
+	$("#Teachenav").addClass('active');
   $(".page-item").click(function() {
     var id = parseInt($(this).attr("id"));
     var totnum = parseInt($("#pagenum").attr("name"));

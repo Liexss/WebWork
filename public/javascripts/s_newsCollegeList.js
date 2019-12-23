@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $("#Collegenav").siblings('li').removeClass('active');
+	$("#Collegenav").addClass('active');
   $(".page-item").click(function() {
     var id = parseInt($(this).attr("id"));
     var totnum = parseInt($("#pagenum").attr("name"));
