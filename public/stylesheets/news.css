@@ -1,211 +1,206 @@
-body{
-		    width: 100%;
-		    height: 100vh;	/* 重点一 */
-		    margin: 0 auto;
-		    background-image: url(../img/backgroud.png);
-		    background-repeat: no-repeat;
-		    background-size: cover;
-		     /* 重点二 */
-		    overflow: auto;
+body {
+  width: 100%;
+  min-height: 100%; /* 重点一 */
+  margin: 0 auto;
+  background-image: url(../img/backgroud.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* 重点二 */
+  overflow: auto;
+  position: absolute;
 }
-p{
-	margin-bottom: 0px;
+p {
+  margin-bottom: 0px;
 }
-#topbar{
-	background-color: rgb(141,30,30);
+#topbar {
+  background-color: rgb(141, 30, 30);
 }
-#back{
-	color: white;
-	text-decoration: none;
+#back {
+  color: white;
+  text-decoration: none;
 }
-#xuline{
-	background: linear-gradient(0deg,  rgb(141,30,30) , #F5F5F5 50%, #F5F5F5 50%, rgb(141,30,30));
-	height: 0.3rem;
+#xuline {
+  background: linear-gradient(
+    0deg,
+    rgb(141, 30, 30),
+    #f5f5f5 50%,
+    #f5f5f5 50%,
+    rgb(141, 30, 30)
+  );
+  height: 0.3rem;
 }
-#newnavbar{
-	background-color:rgb(141,30,30); 
-	padding:0;
+#newnavbar {
+  background-color: rgb(141, 30, 30);
+  padding: 0;
 }
-#newnavbar a{
-	padding:16px 8px 16px 8px;
+#newnavbar a {
+  padding: 16px 8px 16px 8px;
 }
-#navbaritem ul li a{
-	color: rgba(255,255,255,.5);
-	font-size: 1.2rem;
+#navbaritem ul li a {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
 }
-#navbaritem ul .nav1{
-	margin-right: 6rem;
+#navbaritem ul .nav1 {
+  margin-right: 6rem;
 }
-.navbar-nav .active{
-	color: #fff!important;
+.navbar-nav .active {
+  color: #fff !important;
 }
-#cardrow{
-	margin-top: 3rem;
+#cardrow {
+  margin-top: 3rem;
 }
 /* #cardi{
 	//height:30rem!important;
 } */
-.newcardcontent{
-	background-color: rgb(165,78,78);
+.newcardcontent {
+  background-color: rgb(165, 78, 78);
 }
-#newlist{
-	background-color: rgb(253,242,242);
+#newlist {
+  background-color: rgb(253, 242, 242);
 }
 .newtop {
-	background-color: rgb(168,75,75);
-	padding-top: 0.8rem; 
-	/*height:5rem;*/
+  background-color: rgb(168, 75, 75);
+  padding-top: 0.8rem;
+  /*height:5rem;*/
 }
-.newtop a{
-	color: white !important;
-	font-size: 1.2rem;
-	font-weight: bold!important;
-	text-decoration: none!important;
+.newtop a {
+  color: white !important;
+  font-size: 1.2rem;
+  font-weight: bold !important;
+  text-decoration: none !important;
 }
-.newtop .active{
-	background-color: rgb(252,236,237);
+.newtop .active {
+  background-color: rgb(252, 236, 237);
 }
-.newtop .active a{
-	color: rgb(168,75,75)!important;
+.newtop .active a {
+  color: rgb(168, 75, 75) !important;
 }
-.listimg{
-	width: 1.5rem;
-	height: 1.29rem;
-	margin:10% 0% 13% 0;
+.listimg {
+  width: 1.5rem;
+  height: 1.29rem;
+  margin: 10% 0% 13% 0;
 }
-.peopleimg{
-	width: 1.19rem;
-	height: 1.4rem;
-	margin:10% 0% 12% 0;
+.peopleimg {
+  width: 1.19rem;
+  height: 1.4rem;
+  margin: 10% 0% 12% 0;
 }
-#dangshow{
-	margin:0 auto;
+#dangshow {
+  margin: 0 auto;
 }
-.contentitem{
-	padding-top: 1.2rem;
+.contentitem {
+  padding-top: 1.2rem;
 }
-.contentitem .col-md-1{
-	padding:0;
+.contentitem .col-md-1 {
+  padding: 0;
 }
-.newcontent{
-	padding-top:10px;
+.newcontent {
+  padding-top: 10px;
 }
-.newcontent a{
-	color: rgb(168,75,75)!important;
+.newcontent a {
+  color: rgb(168, 75, 75) !important;
 }
-.contenta{
-	max-width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+.contenta {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.more-text{
-	margin: 20px 0px 10px 0px;
-	color: rgb(168,75,75);
-	text-decoration: none!important;
+.more-text {
+  margin: 20px 0px 10px 0px;
+  color: rgb(168, 75, 75);
+  text-decoration: none !important;
 }
-#clock{
-	width: auto;
-	height: auto;
-	max-width: 110%;
-	max-height:110%;
+#clock {
+  width: auto;
+  height: auto;
+  max-width: 110%;
+  max-height: 110%;
 }
-#teachertext{
-	background-color: rgb(165,78,78);
-	font-size: 1rem;
-	width:6rem;
-	padding:0.8rem 1rem 0.8rem 1rem;
-	margin-bottom:0;
-	margin-top: 3rem;
+#teachertext {
+  background-color: rgb(165, 78, 78);
+  font-size: 1rem;
+  width: 6rem;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  margin-bottom: 0;
+  margin-top: 3rem;
 }
-#teacherline{
-	height: 0.055rem;
-	background-color: rgb(165,78,78);
+#teacherline {
+  height: 0.055rem;
+  background-color: rgb(165, 78, 78);
 }
-.teachercol{
-	padding-right: 0;	
-}
-
-#teachernewrow{
-	margin-top: 0rem;
-}
-.mycard{
-	background-color:rgb(253,242,242); 
-	height:10rem;
-}
-.mycard-body{
-	padding:2.5rem 1.25rem 1.25rem 1.25rem;
-}
-.mycard-title{
-	margin-bottom: 1.75rem;
-	font-size: 1.25rem;
-	color: rgb(165,78,78);
-	font-weight:bold;
-	max-width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-.mycard-content{
-	color: rgb(165,78,78);
-}
-.mycard-date{
-	color: rgb(165,78,78);
-	font-weight:500;
-}
-#cardclock{
-	max-width: 1rem;
-	margin-left: 1rem;
-}
-#pagerow{
-	margin-top: 1.25rem;
-}
-#pagerow a{
-	color: rgb(165,78,78);
-}
-#learnrow{
-	margin-top: 1.5rem;
-}
-.page-item.active .page-link{
-	color: #fff!important;
-	background-color: rgb(165,78,78)!important;
-    border-color: rgb(165,78,78)!important;
-}
-.page-item.disabled .page-link{
-	color: #6c757d!important;
-}
-.newstitle{
-	color:rgb(165,78,78);
-	font-size: 1.5rem;
-	font-weight: 500;
-}
-.newssubtitle{
-	padding-top: 1rem;
-	color: rgb(165,78,78);
-}
-.learntext{
-	width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap!important;
-	color: rgb(168,75,75);
-}
-.morecolor{
-	color: rgb(168,75,75);
-}
-.moreone{
-	color: rgb(168,75,75);
-	text-decoration: none!important;
-}
-#footrow {
-	background-color: rgb(133, 33, 37);
-	padding-bottom: 0.5rem;
-	padding-top: 0.5rem;
-	margin-top:4rem;
+.teachercol {
+  padding-right: 0;
 }
 
-
-.blockquote {
-	font-size: 1rem;
+#teachernewrow {
+  margin-top: 0rem;
 }
-
+.mycard {
+  background-color: rgb(253, 242, 242);
+  height: 10rem;
+}
+.mycard-body {
+  padding: 2.5rem 1.25rem 1.25rem 1.25rem;
+}
+.mycard-title {
+  margin-bottom: 1.75rem;
+  font-size: 1.25rem;
+  color: rgb(165, 78, 78);
+  font-weight: bold;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mycard-content {
+  color: rgb(165, 78, 78);
+}
+.mycard-date {
+  color: rgb(165, 78, 78);
+  font-weight: 500;
+}
+#cardclock {
+  max-width: 1rem;
+  margin-left: 1rem;
+}
+#pagerow {
+  margin-top: 1.25rem;
+}
+#pagerow a {
+  color: rgb(165, 78, 78);
+}
+#learnrow {
+  margin-top: 1.5rem;
+}
+.page-item.active .page-link {
+  color: #fff !important;
+  background-color: rgb(165, 78, 78) !important;
+  border-color: rgb(165, 78, 78) !important;
+}
+.page-item.disabled .page-link {
+  color: #6c757d !important;
+}
+.newstitle {
+  color: rgb(165, 78, 78);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.newssubtitle {
+  padding-top: 1rem;
+  color: rgb(165, 78, 78);
+}
+.learntext {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap !important;
+  color: rgb(168, 75, 75);
+}
+.morecolor {
+  color: rgb(168, 75, 75);
+}
+.moreone {
+  color: rgb(168, 75, 75);
+  text-decoration: none !important;
+}

@@ -1,0 +1,17 @@
+#pagerow{
+	margin-top: 1.25rem;
+}
+#pagerow a{
+	color: rgb(165,78,78);
+}
+.page-item.disabled .page-link{
+	color: #6c757d!important;
+}
+.page-item.active .page-link{
+	color: #fff!important;
+	background-color: rgb(165,78,78)!important;
+  border-color: rgb(165,78,78)!important;
+}
+.pagination{
+  margin-bottom: 0rem;
+}

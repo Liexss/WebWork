@@ -1,0 +1,16 @@
+.allcontent {
+  padding-bottom: 10rem;
+}
+#footrow {
+  background-color: rgb(133, 33, 37);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  margin-top: 4rem;
+  position: absolute;
+  bottom: 0px;
+  height: 8rem;
+}
+
+.blockquote {
+  font-size: 1rem;
+}
