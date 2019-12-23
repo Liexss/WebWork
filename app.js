@@ -16,6 +16,7 @@ var signinRouter = require("./routes/signin");
 var adminLoginRouter = require("./routes/admin/login");
 var adminCarouselRouter = require("./routes/admin/carousel");
 var adminArticleRouter = require("./routes/admin/news");
+var adminUserRouter = require("./routes/admin/user");
 
 var app = express();
 
@@ -57,6 +58,7 @@ app.use("/signin", signinRouter);
 app.use("/admin/news", adminArticleRouter);
 app.use("/admin/login", adminLoginRouter);
 app.use("/admin/carousel", adminCarouselRouter);
+app.use("/admin/user", adminUserRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
