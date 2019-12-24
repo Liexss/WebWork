@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
   //console.log(res);
 
   if (!/^\w{1,10}$/.test(id)) return reserr(res, "用户名格式有误");
-  if (!/^\w{1,8}$/.test(name)) return reserr(res, "姓名格式有误");
+  if (name.length<1||name.length>8) return reserr(res, "姓名格式有误");
   if (!/^\w{6,15}$/.test(pwd)) return reserr(res, "密码格式有误");
   if (pwd !== rpwd) return reserr(res, "密码不一致");
 
