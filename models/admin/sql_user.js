@@ -43,7 +43,6 @@ const deleteuserSql = async vals =>
   // 增添用户
 const adduserSql = async vals =>
 new Promise((resolve, reject) => {
-  console.log(vals)
   pool.getConnection((err, connection) => {
     err && console.log("连接失败");
 

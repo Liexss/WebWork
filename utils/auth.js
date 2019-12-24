@@ -1,13 +1,20 @@
 const jwt = require("jsonwebtoken");
-const secret = require("./config").secrept_jwt;
-// var client = require('../models/db_redisconfig.js');
+const { tokenSecrept, shortExpiresIn } = require("./config");
+var client = require('../models/db_redisconfig.js');
 
-module.exports = function(req, res, next) {
+module.exports = function (req, res, next) {
   var t = req.headers.authorization;
   // console.log(t)
 
   if (t) {
-    jwt.verify(t, secret, (err, decoded) => {
+    // 先去redis里找token
+    client.get(t, (err, reply) => {
+      console.log(reply)
+      // 存在则刷新redis中的有效时间
+      if (reply) client.expire(t, shortExpiresIn);
+      else return res.send({ result: 0, msg: "Invalid token" });
+    });
+    jwt.verify(t, tokenSecrept, (err, decoded) => {
       console.log('jwt: ' + JSON.stringify(decoded))
       if (err) {
         console.log('jwt: Invalid token');
