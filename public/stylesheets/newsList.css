@@ -6,10 +6,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: auto;
-  position:absolute; 
+  position: absolute;
 }
-a{
-  text-decoration: none!important;
+a {
+  text-decoration: none !important;
 }
 #topbar {
   background-color: rgb(141, 30, 30);
@@ -44,24 +44,24 @@ a{
 #navbaritem ul .nav1 {
   margin-right: 6rem;
 }
-.navbar-nav .active a{
+.navbar-nav .active a {
   color: #fff !important;
 }
 /*navbar end*/
 
 /*content begin*/
-#navLearn{
-    background-color: rgb(168,75,75);
-    margin-top: 1rem;
+#navLearn {
+  background-color: rgb(168, 75, 75);
+  margin-top: 1rem;
 }
-.breadcrumb-item.active{
-    color: white;
+.breadcrumb-item.active {
+  color: white;
 }
-#contentlearn li{
-    background-color: rgb(253,242,242);
+#contentlearn li {
+  background-color: rgb(253, 242, 242);
 }
-.textstyle{
-  text-decoration: none!important;
-  color: rgb(168,75,75);
+.textstyle {
+  text-decoration: none !important;
+  color: rgb(168, 75, 75);
 }
 /* content end */

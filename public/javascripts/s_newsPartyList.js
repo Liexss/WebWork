@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
   $("#Partynav").siblings('li').removeClass('active');
-	$("#Partynav").addClass('active');
-  $(".page-item").click(function() {
+  $("#Partynav").addClass('active');
+  $(".page-item").click(function () {
     var id = parseInt($(this).attr("id"));
     var totnum = parseInt($("#pagenum").attr("name"));
     var nowpage = parseInt($("#page").attr("name"));

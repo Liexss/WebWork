@@ -98,5 +98,5 @@ function Paging(data) {
   return content;
 }
 module.exports = {
-    Paging
+  Paging
 }

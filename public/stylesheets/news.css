@@ -12,8 +12,8 @@ body {
 p {
   margin-bottom: 0px;
 }
-a{
-  text-decoration: none!important;
+a {
+  text-decoration: none !important;
 }
 #topbar {
   background-color: rgb(141, 30, 30);
@@ -46,7 +46,7 @@ a{
 #navbaritem ul .nav1 {
   margin-right: 6rem;
 }
-.navbar-nav .active a{
+.navbar-nav .active a {
   color: #fff !important;
 }
 #cardrow {
@@ -156,8 +156,8 @@ a{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.mycard-title a{
-  text-decoration: none!important;
+.mycard-title a {
+  text-decoration: none !important;
 }
 .mycard-content {
   color: rgb(165, 78, 78);
@@ -203,11 +203,11 @@ a{
   white-space: nowrap !important;
   color: rgb(168, 75, 75);
 }
-.learntext a{
-  text-decoration: none!important;
+.learntext a {
+  text-decoration: none !important;
 }
-.mycard-body a{
-  text-decoration: none!important;
+.mycard-body a {
+  text-decoration: none !important;
 }
 .morecolor {
   color: rgb(168, 75, 75);

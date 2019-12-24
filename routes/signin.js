@@ -30,8 +30,8 @@ router.get("/verify", async (req, res) => {
       const t = jwt.sign({ usr, pwd: r }, secret, { expiresIn: 60 * 60 * 24 });
       // token存入redis
       client.set(t, 1);
-      client.expire(t, 60*15);
-     // console.log("token:" + t);
+      client.expire(t, 60 * 15);
+      // console.log("token:" + t);
       res.send({
         result: 1,
         msg: "登录成功",

@@ -1,42 +1,42 @@
-#showtextrow{
-	margin-top: 1rem;
+#showtextrow {
+  margin-top: 1rem;
 }
-#showtextrow p{
-	color: rgb(168, 75, 75);
+#showtextrow p {
+  color: rgb(168, 75, 75);
 }
-.mytext{
-	margin-right: 30px;
+.mytext {
+  margin-right: 30px;
 }
 #teacherline {
-    height: 0.055rem;
-	background-color: rgb(165, 78, 78);
+  height: 0.055rem;
+  background-color: rgb(165, 78, 78);
 }
-#showedit{
-	margin-top: 1rem;
+#showedit {
+  margin-top: 1rem;
 }
-#commentrow{
-	margin-top: 1rem;
+#commentrow {
+  margin-top: 1rem;
 }
 .comments .title {
-    color: #3B5998 !important;
-    font-size: 1.8em;
-    margin-bottom: 1em;
+  color: #3b5998 !important;
+  font-size: 1.8em;
+  margin-bottom: 1em;
 }
 .comment-table td.right {
-    text-align: left;
-    vertical-align: top;
-	padding: 0.5em;
-	color:rgb(168, 75, 75);
+  text-align: left;
+  vertical-align: top;
+  padding: 0.5em;
+  color: rgb(168, 75, 75);
 }
 .avatar {
-    text-align: center;
-	font-size: smaller;
-	color:rgb(168, 75, 75);
+  text-align: center;
+  font-size: smaller;
+  color: rgb(168, 75, 75);
 }
 .comment-table td.left {
-    /* vertical-align: top; */
-    text-align: center;
-    width: 150px;
-	padding: 0.5em;
-	color:rgb(168, 75, 75);
+  /* vertical-align: top; */
+  text-align: center;
+  width: 150px;
+  padding: 0.5em;
+  color: rgb(168, 75, 75);
 }

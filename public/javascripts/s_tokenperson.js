@@ -1,10 +1,10 @@
-$(document).ready(function() {
+$(document).ready(function () {
   const t = localStorage.getItem("user-t");
   $.ajax({
     data: { token: t },
     url: "http://localhost:3001/token",
     type: "POST",
-    success: function(data) {
+    success: function (data) {
       //console.log(data);
       if (data.token == true) {
         $("#textname").html(data.user.user_name);
@@ -15,11 +15,11 @@ $(document).ready(function() {
         window.location = "/signin";
       }
     },
-    error: function() {
+    error: function () {
       //console.log(error);
     }
   });
-  $("#back").click(function() {
+  $("#back").click(function () {
     event.preventDefault();
     localStorage.removeItem("user-t");
     window.location = "/signin";

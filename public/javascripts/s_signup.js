@@ -1,10 +1,10 @@
-$(document).ready(function() {
-  $("#subcode").click(function() {
+$(document).ready(function () {
+  $("#subcode").click(function () {
     event.preventDefault();
     var data = {};
 
     var t = $("#sign_up").serializeArray();
-    $.each(t, function() {
+    $.each(t, function () {
       data[this.name] = this.value;
     });
     data["college"] = $("#sel1 option:selected").val();
@@ -13,8 +13,8 @@ $(document).ready(function() {
       data: data,
       url: "http://localhost:3001/signup",
       type: "POST",
-      success: function(data) {},
-      error: function() {
+      success: function (data) { },
+      error: function () {
         //console.log("error");
       }
     });

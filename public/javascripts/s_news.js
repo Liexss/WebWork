@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   $("#homenav")
     .siblings("li")
     .removeClass("active");
@@ -7,14 +7,14 @@ $(document).ready(function() {
   $('#Medialist').removeClass('active');
   $(".Media").hide();
   $(".Party").show();
-  $("#Partychange").click(function(){
+  $("#Partychange").click(function () {
     event.preventDefault();
     $('#Partylist').addClass("active");
     $('#Medialist').removeClass('active');
     $(".Media").hide();
     $(".Party").show();
   });
-  $("#Mediachange").click(function(){
+  $("#Mediachange").click(function () {
     event.preventDefault();
     $('#Medialist').addClass("active");
     $('#Partylist').removeClass('active');

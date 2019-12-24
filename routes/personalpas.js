@@ -9,9 +9,9 @@ const secret = require("../utils/config").secrept_jwt;
 var client = require('../models/db_redisconfig.js');
 const decrypt = require("../utils/crypto").decrypt;
 router.get("/", async (req, res) => {
-    res.render("layout", {
-        layout: "personalpas"
-      });
+  res.render("layout", {
+    layout: "personalpas"
+  });
 });
 router.post("/check", async (req, res) => {
   // var t = req.body;
@@ -23,31 +23,31 @@ router.post("/check", async (req, res) => {
       //console.log('redis: ' + reply)
       // 存在则刷新redis中的有效时间
       if (reply) {
-        client.expire(t, 60*15);
-        jwt.verify(t, secret, async(err, decoded) => {
+        client.expire(t, 60 * 15);
+        jwt.verify(t, secret, async (err, decoded) => {
           if (err) {
-            res.send({token:false});
+            res.send({ token: false });
             res.end();
           } else {
-            if(req.body.pwd!==req.body.rpwd||req.body.pwd==""){
-              res.send({token:true,change:false,msg:'两次密码输入不一致'});
+            if (req.body.pwd !== req.body.rpwd || req.body.pwd == "") {
+              res.send({ token: true, change: false, msg: '两次密码输入不一致' });
               res.end();
             }
-            else if(!/^\w{6,15}$/.test(req.body.pwd)){
-              res.send({token:true,change:false,msg:'新密码格式有误'});
+            else if (!/^\w{6,15}$/.test(req.body.pwd)) {
+              res.send({ token: true, change: false, msg: '新密码格式有误' });
               res.end();
             }
-            else{
+            else {
               const doc = await User.searchexisuserHandler({ user_id: decoded.usr, is_post: 0 });
               const r = await decrypt(req.body.fpwd, doc.result[0].salt);
-              if(r!==doc.result[0].password){
-                res.send({token:true,change:false,msg:'原密码不一致'});
+              if (r !== doc.result[0].password) {
+                res.send({ token: true, change: false, msg: '原密码不一致' });
                 res.end();
               }
-              else{
-                const ww=await decrypt(req.body.pwd,doc.result[0].salt);
-                let update=await User.updateuserpasHandler({user_id:decoded.usr,password:ww});
-                res.send({token:true,change:true,msg:'修改成功'});
+              else {
+                const ww = await decrypt(req.body.pwd, doc.result[0].salt);
+                let update = await User.updateuserpasHandler({ user_id: decoded.usr, password: ww });
+                res.send({ token: true, change: true, msg: '修改成功' });
               }
             }
             // let docuser=await User.showusercollegeHandler({user_id:decoded.usr});
@@ -63,7 +63,7 @@ router.post("/check", async (req, res) => {
       }
     });
   } else {
-    res.send({token:false});
+    res.send({ token: false });
     res.end();
   }
 });

@@ -4,19 +4,19 @@ var redis = require("redis"),
   RDS_OPTS = {},
   client = redis.createClient(RDS_PORT, RDS_HOST, RDS_OPTS);
 
-client.on("ready", function(res) {
+client.on("ready", function (res) {
   console.log("ready");
 });
 
-client.on("end", function(err) {
+client.on("end", function (err) {
   console.log("end");
 });
 
-client.on("error", function(err) {
+client.on("error", function (err) {
   console.log(err);
 });
 
-client.on("connect", function() {
+client.on("connect", function () {
   console.log("redis connect success!");
 });
 module.exports = client;

@@ -64,7 +64,7 @@ const searchuserHandler = async vals =>
       );
     });
   });
-  const updateuserpasHandler = async vals =>
+const updateuserpasHandler = async vals =>
   new Promise((resolve, reject) => {
     //console.log(vals);
     pool.getConnection((err, connection) => {
@@ -73,12 +73,12 @@ const searchuserHandler = async vals =>
       }
       connection.query(
         `update user set password= ? where user_id= ?`,
-        [vals.password,vals.user_id],
+        [vals.password, vals.user_id],
         (e, result) => {
           if (e) {
             console.log("查询失败");
           } else {
-            connection.release(); 
+            connection.release();
             resolve({ result });
           }
         }
@@ -129,7 +129,7 @@ const showcollegeHandler = async vals =>
       });
     });
   });
-  const showusercollegeHandler = async vals =>
+const showusercollegeHandler = async vals =>
   new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
       if (err) {
@@ -137,7 +137,7 @@ const showcollegeHandler = async vals =>
       }
       //开启事务
       //执行INSERT插入操作
-      connection.query(`SELECT a.user_id,a.user_name,b.college_name FROM user a left join college b on a.college_id=b.college_id where a.user_id= ?`, [vals.user_id],(e, result) => {
+      connection.query(`SELECT a.user_id,a.user_name,b.college_name FROM user a left join college b on a.college_id=b.college_id where a.user_id= ?`, [vals.user_id], (e, result) => {
         if (e) {
           console.log("查询失败");
         } else {

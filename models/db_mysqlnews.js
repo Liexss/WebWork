@@ -115,7 +115,7 @@ const InsertCommentsHandler = async vals =>
     });
   }).catch(error => console.log(error));
 
-  const updatenewsHandler = async vals =>
+const updatenewsHandler = async vals =>
   new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
       if (err) {
@@ -148,7 +148,7 @@ const InsertCommentsHandler = async vals =>
       });
     });
   });
-  const selimgHandler = async vals =>
+const selimgHandler = async vals =>
   new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
       err && console.log("连接失败");

@@ -89,7 +89,7 @@ form {
   background-color: #fff;
   /* border: 1px solid #00B7FF; */
   border: 1px solid #2188ff;
-  box-shadow: 0 0 0 3px rgba(5,183,255,0.50);
+  box-shadow: 0 0 0 3px rgba(5, 183, 255, 0.5);
 }
 
 .from-btn {
@@ -127,8 +127,8 @@ form {
   /* pointer-events: none; */
   cursor: not-allowed;
 }
-a{
-  text-decoration: none!important;
+a {
+  text-decoration: none !important;
 }
 .m-msg {
   position: fixed;
@@ -137,7 +137,7 @@ a{
   /* background: rgb(105, 190, 121); */
   color: #fff;
   font-size: 14px;
-  font-family: "lucida Grande",Verdana,"Microsoft YaHei";
+  font-family: "lucida Grande", Verdana, "Microsoft YaHei";
   padding: 5px 20px;
   border-radius: 3px;
   background-color: red;
@@ -150,15 +150,15 @@ a{
 
 @keyframes TOAST-APPEAR {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   15% {
-      opacity: 1;
+    opacity: 1;
   }
   80% {
-      opacity: 1;
+    opacity: 1;
   }
   100% {
-      opacity: 0;
+    opacity: 0;
   }
 }

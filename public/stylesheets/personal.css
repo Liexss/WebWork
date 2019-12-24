@@ -1,24 +1,24 @@
-#catalog{
-	border-radius: 4px 4px 0px 0px;
-	border-bottom: 1px solid;
-	margin-top: 30px;
+#catalog {
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 1px solid;
+  margin-top: 30px;
 }
 
-#mainber{
-	padding-left: 3%;
+#mainber {
+  padding-left: 3%;
 }
 
-#Info{
-	width: 40%;
+#Info {
+  width: 40%;
 }
 
-@media (max-width: 996px) { 
-	.container{
-		margin-left: 2%;
-		margin-right: 2%;
-	}
+@media (max-width: 996px) {
+  .container {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
 
-    #Info{
-        width: 80%;
-    }
+  #Info {
+    width: 80%;
+  }
 }
