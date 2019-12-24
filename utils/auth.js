@@ -9,7 +9,7 @@ module.exports = function (req, res, next) {
   if (t) {
     // 先去redis里找token
     client.get(t, (err, reply) => {
-      console.log(reply)
+      console.log('redis: ' + reply)
       // 存在则刷新redis中的有效时间
       if (reply) client.expire(t, shortExpiresIn);
       else return res.send({ result: 0, msg: "Invalid token" });

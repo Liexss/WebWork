@@ -11,7 +11,7 @@ $(document).ready(function() {
     //console.log(data);
     $.ajax({
       data: data,
-      url: "http://localhost:3001/signup",
+      url: "http://47.106.124.118:3001/signup",
       type: "POST",
       success: function(data) {},
       error: function() {
