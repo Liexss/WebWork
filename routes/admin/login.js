@@ -3,9 +3,10 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 
 const auth = require("../../utils/auth");
-const secret = require("../../utils/config").secrept_jwt;
+const { tokenSecrept, expiresIn, shortExpiresIn } = require('../../utils/config');
 const decrypt = require("../../utils/crypto").decrypt;
 const { searchuserHandler, selNameById } = require("../../models/db_mysqluser");
+const client = require('../../models/db_redisconfig');
 
 // 身份认证
 router.get("/", auth, async (req, res) => {
@@ -30,7 +31,10 @@ router.post("/verify", async (req, res) => {
       res.send({ result: 0, msg: "用户名或密码错误！" });
     else {
       // 密码正确jwt生成token
-      const t = jwt.sign({ user_id, pwd: r }, secret, { expiresIn: 60 * 15 });
+      const t = jwt.sign({ user_id, pwd: r }, tokenSecrept, { expiresIn });
+      // token存入redis
+      client.set(t, 1);
+      client.expire(t, shortExpiresIn);
       console.log("token: " + t);
 
       res.send({ result: 1, msg: "登录成功！", token: t });
