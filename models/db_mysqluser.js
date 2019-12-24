@@ -49,9 +49,8 @@ const searchuserHandler = async vals =>
       }
       const tablename = "user"; //动态table(表)名称
       //开启事务
-      //执行INSERT插入操作
       connection.query(
-        `SELECT * FROM ${tablename} WHERE type=${vals.type} and ?`,
+        `SELECT * FROM ${tablename} WHERE type=${vals.type} and user_id=?`,
         vals.user_id,
         (e, result) => {
           if (e) {
