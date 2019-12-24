@@ -220,8 +220,8 @@
         setTimeout(() => showMenu(h, H, navsel), 5);
       } else {
         stack--;
-        console.log(1)
-        console.log(stack + 'show')
+        //console.log(1)
+        //console.log(stack + 'show')
         navsel.style.height = `${H}px`;
         if (stack) hideMenu(h, navsel);
       }
@@ -234,7 +234,7 @@
         setTimeout(() => hideMenu(h, navsel), 5);
       } else {
         stack--;
-        console.log(stack + 'hide')
+        //console.log(stack + 'hide')
         navsel.style.display = 'none';
         if (stack) {
           navsel.style.display = 'block';

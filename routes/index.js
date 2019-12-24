@@ -16,7 +16,7 @@ router.post("/token", async(req, res) =>{
 
   if (t) {
     client.get(t, (err, reply) => {
-      console.log('redis: ' + reply)
+      //console.log('redis: ' + reply)
       // 存在则刷新redis中的有效时间
       if (reply) {
         client.expire(t, 60*15);
@@ -32,7 +32,7 @@ router.post("/token", async(req, res) =>{
             //token仍在有效刷新期
             //console.log(decoded.usr);
             let docuser=await User.showusercollegeHandler({user_id:decoded.usr});
-            console.log(docuser.result[0]);
+            //console.log(docuser.result[0]);
             res.send({token:true,user:docuser.result[0]});
             res.end();
           }

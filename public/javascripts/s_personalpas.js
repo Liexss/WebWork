@@ -7,7 +7,7 @@ $(document).ready(function() {
             url: "http://localhost:3001/personalpas/check",
             type: "POST",
             success: function(data) {
-              console.log(data);
+              //console.log(data);
               if (data.token == true) {
                 if(data.change==true){
                   window.alert(data.msg);
@@ -21,7 +21,7 @@ $(document).ready(function() {
               }
             },
             error: function() {
-              console.log(error);
+              //console.log(error);
             }
         });
     });

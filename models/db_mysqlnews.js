@@ -90,7 +90,7 @@ const InsertCommentsHandler = async vals =>
           return "开启事务失败";
         } else {
           //执行INSERT插入操作
-          console.log(vals);
+          //console.log(vals);
           connection.query(
             `INSERT INTO ${tablename} SET ?`,
             vals,

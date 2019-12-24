@@ -41,7 +41,7 @@ const insertuserHandler = async vals =>
 
 const searchuserHandler = async vals =>
   new Promise((resolve, reject) => {
-    console.log(vals);
+    //console.log(vals);
     pool.getConnection((err, connection) => {
       if (err) {
         console.log("连接失败");
@@ -66,7 +66,7 @@ const searchuserHandler = async vals =>
   });
   const updateuserpasHandler = async vals =>
   new Promise((resolve, reject) => {
-    console.log(vals);
+    //console.log(vals);
     pool.getConnection((err, connection) => {
       if (err) {
         console.log("连接失败");
@@ -87,7 +87,7 @@ const searchuserHandler = async vals =>
   });
 const searchexisuserHandler = async vals =>
   new Promise((resolve, reject) => {
-    console.log(vals);
+    //console.log(vals);
     pool.getConnection((err, connection) => {
       if (err) {
         console.log("连接失败");
@@ -137,7 +137,7 @@ const showcollegeHandler = async vals =>
       }
       //开启事务
       //执行INSERT插入操作
-      connection.query(`SELECT * FROM user a left join college b on a.college_id=b.college_id where a.user_id= ?`, [vals.user_id],(e, result) => {
+      connection.query(`SELECT a.user_id,a.user_name,b.college_name FROM user a left join college b on a.college_id=b.college_id where a.user_id= ?`, [vals.user_id],(e, result) => {
         if (e) {
           console.log("查询失败");
         } else {

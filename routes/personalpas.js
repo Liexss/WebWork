@@ -16,11 +16,11 @@ router.get("/", async (req, res) => {
 router.post("/check", async (req, res) => {
   // var t = req.body;
   // console.log(t);
-  console.log(req.body);
+  //console.log(req.body);
   var t = req.body.token;
   if (t) {
     client.get(t, (err, reply) => {
-      console.log('redis: ' + reply)
+      //console.log('redis: ' + reply)
       // 存在则刷新redis中的有效时间
       if (reply) {
         client.expire(t, 60*15);

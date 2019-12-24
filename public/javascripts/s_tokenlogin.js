@@ -5,14 +5,14 @@ $(document).ready(function() {
     url: "http://localhost:3001/token",
     type: "POST",
     success: function(data) {
-      console.log(data);
+      //console.log(data);
       if (data.token == true) {
         window.location = "/home";
       } else {
       }
     },
     error: function() {
-      console.log(error);
+      //console.log(error);
     }
   });
 });

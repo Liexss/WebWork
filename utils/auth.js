@@ -9,15 +9,15 @@ module.exports = function (req, res, next) {
   if (t) {
     // 先去redis里找token
     client.get(t, (err, reply) => {
-      console.log(reply)
+      //console.log(reply)
       // 存在则刷新redis中的有效时间
       if (reply) client.expire(t, shortExpiresIn);
       else return res.send({ result: 0, msg: "Invalid token" });
     });
     jwt.verify(t, tokenSecrept, (err, decoded) => {
-      console.log('jwt: ' + JSON.stringify(decoded))
+      //console.log('jwt: ' + JSON.stringify(decoded))
       if (err) {
-        console.log('jwt: Invalid token');
+        //console.log('jwt: Invalid token');
         //token已过期或不存在
         res.send({ result: 0, msg: "Invalid token" });
       } else {
@@ -28,7 +28,7 @@ module.exports = function (req, res, next) {
     });
   } else {
     //请求无token
-    console.log('jwt: No token')
+    //console.log('jwt: No token')
     res.send({ result: 0, msg: 'No token' });
   }
 };
