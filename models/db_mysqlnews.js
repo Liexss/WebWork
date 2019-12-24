@@ -148,6 +148,20 @@ const InsertCommentsHandler = async vals =>
       });
     });
   });
+  const selimgHandler = async vals =>
+  new Promise((resolve, reject) => {
+    pool.getConnection((err, connection) => {
+      err && console.log("连接失败");
+      connection.query(
+        `select * from carousel order by img_id desc limit 3`,
+        (e, doc) => {
+          e && console.log("查询失败");
+          connection.release();
+          resolve(doc);
+        }
+      );
+    });
+  }).catch(error => console.log(error));
 module.exports = {
   selnewsHandler,
   selAllnewsHandler,
@@ -155,5 +169,6 @@ module.exports = {
   shownewsHandler,
   showCommentsHandler,
   InsertCommentsHandler,
-  updatenewsHandler
+  updatenewsHandler,
+  selimgHandler
 };

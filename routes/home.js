@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
   const News = require("../models/db_mysqlnews");
   let Collegenews = await News.selnewsHandler({ type: "师大要闻", num: 4 });
   let Notice = await News.selnewsHandler({ type: "通知公告", num: 8 });
+  let img=await News.selimgHandler();
   //console.log(Notice.slice(0,4));
   //console.log(Notice.slice(4,8));
   res.render("layout", {
