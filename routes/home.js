@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
   let Collegenews = await News.selnewsHandler({ type: "师大要闻", num: 4 });
   let Notice = await News.selnewsHandler({ type: "通知公告", num: 8 });
   let img=await News.selimgHandler();
+  img[0]['show']=true;
   //console.log(Notice.slice(0,4));
   //console.log(Notice.slice(4,8));
   res.render("layout", {
@@ -16,7 +17,8 @@ router.get("/", async (req, res) => {
     title: "杭师大主页",
     Collegenews: Collegenews,
     Notice1: Notice.slice(0, 4),
-    Notice2: Notice.slice(4, 8)
+    Notice2: Notice.slice(4, 8),
+    img:img
   });
 });
 router

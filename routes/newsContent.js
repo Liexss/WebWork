@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
     if(news_id == null){
         res.send('404');
     }
-    let changenew = await News.updatenewsHandler({news_id:news_id});
+    let changenew = await News.updatenewsHandler({news_id:news_id}); 
     let docnews = await News.shownewsHandler({ id: news_id });
     let doccomment = await News.showCommentsHandler({ id: news_id });
     if (docnews[0].type == '师大要闻') {
