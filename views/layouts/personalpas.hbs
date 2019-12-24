@@ -30,34 +30,26 @@
         <form id="sign_up" name="sign-up" method="POST">
             <div class="form-group">
                 <label for="initialPasswordLabel">Initial password</label>
-                <input type="password" name="fpwd" class="form-control" id="initialPasswordInput" placeholder="请输入原密码"
+                <input type="password" id="fpwd" class="form-control" id="initialPasswordInput" placeholder="请输入原密码"
                     autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="newPasswordLabel">New password</label>
-                <input type="password" name="pwd" class="form-control" id="newPasswordInput"
+                <input type="password" id="pwd" class="form-control" id="newPasswordInput"
                     placeholder="请输入新密码,6-15个数字、字母或下划线" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="newPasswordAgainLabel">Re-enter password</label>
-                <input type="password" name="rpwd" class="form-control" id="newPasswordAgainInput"
+                <input type="password" id="rpwd" class="form-control" id="newPasswordAgainInput"
                     placeholder="请输入再次输入密码" autocomplete="off">
             </div>
-            <button type="submit" class="btn btn-success" style="margin-bottom: 10px;">更改</button>
+            <button type="submit" class="btn btn-success" style="margin-bottom: 10px;" id="changepas">更改</button>
         </form>
     </div>
     {{>bottomFooter}}
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
-        integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script>
-    </script>
-    <script src="/static/javascripts/axios.min.map.js"></script>
     <script src="/static/javascripts/s_tokenuse.js"></script>
+    <script src="/static/javascripts/s_personalpas.js"></script>
 </body>
 
 </html>

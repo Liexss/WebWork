@@ -15,7 +15,7 @@ $(document).ready(function() {
       type: "POST",
       success: function(data) {},
       error: function() {
-        console.log("error");
+        //console.log("error");
       }
     });
   });

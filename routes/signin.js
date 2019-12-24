@@ -14,13 +14,13 @@ router.get("/", (req, res, next) => {
 
 router.get("/verify", async (req, res) => {
   let { usr, pwd } = url.parse(req.url, true).query;
-  console.log(JSON.stringify(url.parse(req.url, true).query));
+  //console.log(JSON.stringify(url.parse(req.url, true).query));
 
   // 用户查询
   const User = require("../models/db_mysqluser");
   const doc = await User.searchexisuserHandler({ user_id: usr, is_post: 0 });
   //console.log(doc.result[0].user_id);
-  console.log(doc);
+  //console.log(doc);
   // 登录检测
   if (Object.keys(doc.result).length != 0) {
     const r = await decrypt(pwd, doc.result[0].salt);

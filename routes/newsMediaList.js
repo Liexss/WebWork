@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   if (req.query.pagenum == null) {
     con.nowpagenum = 1;
   } else con.nowpagenum = req.query.pagenum;
-  console.log(con.nowpagenum);
+  //console.log(con.nowpagenum);
   var pagedata = {
     nowPage: con.nowpagenum,
     pageNum: (con.totalnum + con.nowpagesize - 1) / con.nowpagesize
@@ -29,9 +29,9 @@ router.get("/", async (req, res) => {
     left: (pagedata.nowPage - 1) * con.nowpagesize,
     size: con.nowpagesize
   });
-  console.log(LearnNew);
-  console.log((pagedata.nowPage - 1) * con.nowpagesize);
-  console.log(pagedata.nowPage * con.nowpagesize);
+  //console.log(LearnNew);
+  //console.log((pagedata.nowPage - 1) * con.nowpagesize);
+  //console.log(pagedata.nowPage * con.nowpagesize);
   res.render("layout", {
     layout: "newsMediaList",
     // movies: chunk[con.nowpagenum - 1],

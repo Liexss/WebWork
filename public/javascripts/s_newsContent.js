@@ -7,7 +7,7 @@ $(document).ready(function() {
           url: "http://47.106.124.118:3001/newsContent/comment",
           type: "POST",
           success: function(data) {
-            console.log(data);
+            //console.log(data);
             if (data.token == true) {
               if(data.insert==true){
                 window.alert("发表成功");
@@ -21,7 +21,7 @@ $(document).ready(function() {
             }
           },
           error: function() {
-            console.log(error);
+            //console.log(error);
           }
         });
       });

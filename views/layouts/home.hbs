@@ -2,15 +2,11 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/static/stylesheets/home.css">
-
   <title>{{title}}</title>
 </head>
 
@@ -20,7 +16,7 @@
       <img src="/static/img/coin.jpg" alt="HZNU" title="HZNU">
     </div> -->
     <nav class="my-0 lf-nav">
-      <img src="/static/img/bottomlogo.png" style="width: auto;height: auto;max-width: 60%;max-height: 60%;">
+      <img src="/static/img/bottomLogo.png" style="width: auto;height: auto;max-width: 60%;max-height: 60%;">
     </nav>
     <form class="form-inline my-0 pr-2">
       <input class="form-control mr-sm-3" type="text" placeholder="Search" aria-label="Search">
@@ -200,7 +196,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script src="/static/javascripts/axios.min.map.js"></script>
   <script src="/static/javascripts/s_tokenuse.js"></script>
   <script src="/static/javascripts/s_home.js"></script>
   <script>
@@ -225,8 +220,8 @@
         setTimeout(() => showMenu(h, H, navsel), 5);
       } else {
         stack--;
-        console.log(1)
-        console.log(stack + 'show')
+        //console.log(1)
+        //console.log(stack + 'show')
         navsel.style.height = `${H}px`;
         if (stack) hideMenu(h, navsel);
       }
@@ -239,7 +234,7 @@
         setTimeout(() => hideMenu(h, navsel), 5);
       } else {
         stack--;
-        console.log(stack + 'hide')
+        //console.log(stack + 'hide')
         navsel.style.display = 'none';
         if (stack) {
           navsel.style.display = 'block';

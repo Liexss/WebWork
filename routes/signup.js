@@ -30,7 +30,7 @@ async function reserr(res, text) {
 router.post("/", async (req, res) => {
   let collegedata = await User.showcollegeHandler();
   let { id, name, sellist1, college, pwd, rpwd } = req.body;
-  console.log(JSON.stringify(req.body));
+  //console.log(JSON.stringify(req.body));
   //console.log(res);
 
   if (!/^\w{1,10}$/.test(id)) return reserr(res, "用户名格式有误");
@@ -55,7 +55,7 @@ router.post("/", async (req, res) => {
     password: r,
     salt: salt
   });
-  console.log(1);
+  //console.log(1);
   if (insertUser.success == true) {
     return res.render("layout", {
       layout: "signin",
@@ -66,7 +66,7 @@ router.post("/", async (req, res) => {
       }
     });
   }
-  console.log(insertUser);
+  //console.log(insertUser);
 });
 
 module.exports = router;
