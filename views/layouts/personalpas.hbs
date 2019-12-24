@@ -30,20 +30,20 @@
         <form id="sign_up" name="sign-up" method="POST">
             <div class="form-group">
                 <label for="initialPasswordLabel">Initial password</label>
-                <input type="password" name="fpwd" class="form-control" id="initialPasswordInput" placeholder="请输入原密码"
+                <input type="password" id="fpwd" class="form-control" id="initialPasswordInput" placeholder="请输入原密码"
                     autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="newPasswordLabel">New password</label>
-                <input type="password" name="pwd" class="form-control" id="newPasswordInput"
+                <input type="password" id="pwd" class="form-control" id="newPasswordInput"
                     placeholder="请输入新密码,6-15个数字、字母或下划线" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="newPasswordAgainLabel">Re-enter password</label>
-                <input type="password" name="rpwd" class="form-control" id="newPasswordAgainInput"
+                <input type="password" id="rpwd" class="form-control" id="newPasswordAgainInput"
                     placeholder="请输入再次输入密码" autocomplete="off">
             </div>
-            <button type="submit" class="btn btn-success" style="margin-bottom: 10px;">更改</button>
+            <button type="submit" class="btn btn-success" style="margin-bottom: 10px;" id="changepas">更改</button>
         </form>
     </div>
     {{>bottomFooter}}
