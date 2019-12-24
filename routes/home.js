@@ -13,11 +13,11 @@ router.get("/", async (req, res) => {
   res.render("layout", {
     layout: "home",
     title: "杭师大主页",
-    usr: "刘兴松",
     Collegenews: Collegenews,
     Notice1: Notice.slice(0, 4),
     Notice2: Notice.slice(4, 8)
   });
 });
+router
 
 module.exports = router;

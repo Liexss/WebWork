@@ -27,8 +27,8 @@
       <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
     </form>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-white" href="#">{{usr}}</a>
-      <a class="p-2 text-white" href="#">退出登陆</a>
+      <a id="textname" class="p-2 text-white" href="#"></a>
+      <a class="p-2 text-white" href="#" id="back">退出登陆</a>
     </nav>
   </div>
   <div class="p-2" id="navbar3">
@@ -193,17 +193,16 @@
     </blockquote>
   </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
     integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script src="/static/javascripts/axios.min.map.js"></script>
+  <script src="/static/javascripts/s_tokenuse.js"></script>
+  <script src="/static/javascripts/s_home.js"></script>
   <script>
     var menu = document.getElementById('menuBtn');
     var stack = 0;

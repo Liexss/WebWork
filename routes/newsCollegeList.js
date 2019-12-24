@@ -41,5 +41,4 @@ router.get("/", async (req, res) => {
     nowpage: pagedata.nowPage
   });
 });
-
 module.exports = router;

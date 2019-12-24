@@ -15,7 +15,7 @@
 
 <body>
   {{>newsTitle}}
-  <div class="container">
+  <div class="container" id ="content" name="{{{news.news_id}}}">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb" id="navLearn">
         <li class="breadcrumb-item active" aria-current="page">{{news.type}}</li>
@@ -23,9 +23,7 @@
       </ol>
     </nav>
     <div class="row justify-content-center">
-      <div class="col-md-12">
-        <h2 style="color:rgb(168, 75, 75);">{{news.news_name}}</h2>
-      </div>
+        <h2 style="color:rgb(168, 75, 75);padding-right: 15px;padding-left:15px;" >{{news.news_name}}</h2>
     </div>
     <div class="row justify-content-center" id="showtextrow">
       <p class="mytext">发布时间：{{news.update_time}}</p>
@@ -49,13 +47,13 @@
     <div class="row justify-content-center" id="commentrow">
       <div class="col-md-12">
         <div class="form-group">
-          <textarea class="form-control" placeholder="发表评论" rows="3" style="resize: none; height: 100px;" id="content"
+          <textarea class="form-control" placeholder="发表评论" rows="3" style="resize: none; height: 100px;" id="ttcontent"
             name="content"></textarea>
         </div>
       </div>
     </div>
     <div class="row justify-content-end">
-      <button type="button" class="btn btn-info" style="margin-right: 15px;">确认发布</button>
+      <button id="submitcomment" type="button" class="btn btn-info" style="margin-right: 15px;">确认发布</button>
     </div>
   </div>
   <div class="container allcontent comments" id="mycomments">
@@ -67,9 +65,7 @@
     {{>commentCotent}}
   </div>
   {{>bottomFooter}}
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
     integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb"
     crossorigin="anonymous"></script>
@@ -83,6 +79,9 @@
     });
 
   </script>
+  <script src="/static/javascripts/axios.min.map.js"></script>
+  <script src="/static/javascripts/s_tokenuse.js"></script>
+  <script src="/static/javascripts/s_newsContent.js"></script>
 </body>
 
 </html>
