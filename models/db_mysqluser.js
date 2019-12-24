@@ -64,6 +64,27 @@ const searchuserHandler = async vals =>
       );
     });
   });
+  const updateuserpasHandler = async vals =>
+  new Promise((resolve, reject) => {
+    console.log(vals);
+    pool.getConnection((err, connection) => {
+      if (err) {
+        console.log("连接失败");
+      }
+      connection.query(
+        `update user set password= ? where user_id= ?`,
+        [vals.password,vals.user_id],
+        (e, result) => {
+          if (e) {
+            console.log("查询失败");
+          } else {
+            connection.release(); 
+            resolve({ result });
+          }
+        }
+      );
+    });
+  });
 const searchexisuserHandler = async vals =>
   new Promise((resolve, reject) => {
     console.log(vals);
@@ -150,5 +171,6 @@ module.exports = {
   searchexisuserHandler,
   showcollegeHandler,
   showusercollegeHandler,
-  selNameById
+  selNameById,
+  updateuserpasHandler
 };

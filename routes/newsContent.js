@@ -22,6 +22,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
 }
 router.get("/", async (req, res) => {
     var news_id = req.query.news_id;
+    let changenew = await News.updatenewsHandler({news_id:news_id});
     let docnews = await News.shownewsHandler({ id: news_id });
     let doccomment = await News.showCommentsHandler({ id: news_id });
     if (docnews[0].type == '师大要闻') {
@@ -42,7 +43,7 @@ router.get("/", async (req, res) => {
     else if (docnews[0].type == '通知公告') {
         docnews[0]['msg'] = 'Noticenav';
     }
-    console.log(docnews[0]);
+    //console.log(docnews[0]);
     res.render("layout", {
         layout: "newsContent",
         news: docnews[0],

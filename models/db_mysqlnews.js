@@ -114,11 +114,46 @@ const InsertCommentsHandler = async vals =>
       });
     });
   }).catch(error => console.log(error));
+
+  const updatenewsHandler = async vals =>
+  new Promise((resolve, reject) => {
+    pool.getConnection((err, connection) => {
+      if (err) {
+        console.log("连接失败");
+      }
+      connection.beginTransaction(err => {
+        if (err) {
+          return "开启事务失败";
+        } else {
+          connection.query(
+            `update news set news_focus = news_focus+1 where news_id= ?`,
+            [vals.news_id],
+            (e, rows, fields) => {
+              if (e) {
+                return connection.rollback(() => {
+                  console.log("插入失败数据回滚");
+                });
+              } else {
+                connection.commit(error => {
+                  if (error) {
+                    console.log("事务提交失败");
+                  }
+                });
+                connection.release(); // 释放链接
+                resolve({ rows, success: true });
+              }
+            }
+          );
+        }
+      });
+    });
+  });
 module.exports = {
   selnewsHandler,
   selAllnewsHandler,
   selRangenewsHandler,
   shownewsHandler,
   showCommentsHandler,
-  InsertCommentsHandler
+  InsertCommentsHandler,
+  updatenewsHandler
 };
