@@ -3,6 +3,7 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 
 const auth = require("../../utils/auth");
+const out = require("../../utils/out");
 const { tokenSecrept, expiresIn, shortExpiresIn } = require('../../utils/config');
 const decrypt = require("../../utils/crypto").decrypt;
 const { searchuserHandler, selNameById } = require("../../models/db_mysqluser");
@@ -43,5 +44,7 @@ router.post("/verify", async (req, res) => {
     res.send({ result: 0, msg: "用户名或密码错误！" });
   }
 });
+
+router.get('/out', out);
 
 module.exports = router;
