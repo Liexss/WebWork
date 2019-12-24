@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
   if (pwd !== rpwd) return reserr(res, "密码不一致");
 
   // 用户查重
-  let doc = await User.searchexisuserHandler({ user_id: usr, is_post: 0 });
+  let doc = await User.searchexisuserHandler({ user_id: id, is_post: 0 });
   //console.log(doc);
   //console.log(Object.keys(doc.result).length);
   if (Object.keys(doc.result).length != 0) return reserr(res, "用户名已存在");
@@ -51,11 +51,12 @@ router.post("/", async (req, res) => {
   let insertUser = await User.insertuserHandler({
     user_id: id,
     user_name: name,
-    college_id: college,
+    college_id: sellist1,
     password: r,
     salt: salt
   });
   //console.log(1);
+  //console.log(insertUser);
   if (insertUser.success == true) {
     return res.render("layout", {
       layout: "signin",

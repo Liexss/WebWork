@@ -2,6 +2,7 @@ const pool = require("./db_mysqlconfig"); //引入上面所讲的数据库基础
 
 const insertuserHandler = async vals =>
   new Promise((resolve, reject) => {
+    //console.log(vals);
     pool.getConnection((err, connection) => {
       if (err) {
         console.log("连接失败");
@@ -13,7 +14,7 @@ const insertuserHandler = async vals =>
           return "开启事务失败";
         } else {
           //执行INSERT插入操作
-          console.log(vals);
+          //console.log(vals);
           connection.query(
             `INSERT INTO ${tablename} SET ?`,
             vals,

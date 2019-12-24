@@ -19,7 +19,7 @@
           <a href="javascript: void()" class="form-on">注册</a>
           <a href="/signin">登陆</a>
         </div>
-        <form id="sign_up" name="sign-up" method="POST">
+        <form id="sign_up" name="sign-up" method="POST" action="/signup">
           <div class="from-row">
             <label for="id" class="from-label">用户名</label>
             <input id="inputId" type="text" name="id" class="from-input" placeholder="1-10个数字、字母或下划线" required />
@@ -51,7 +51,7 @@
             <input type="password" name="rpwd" class="from-input" placeholder="6-15个数字、字母或下划线" required />
           </div>
           <div class="from-row">
-            <button id="subcode" type="submit" class="from-btn">登陆</button>
+            <button id="subcode" type="submit" class="from-btn">注册</button>
           </div>
         </form>
       </div>
@@ -72,7 +72,6 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
   <script src="/static/javascripts/axios.min.map.js"></script>
-  <script src="/static/javascripts/s_signup.js"></script>
 </body>
 
 </html>
