@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const decrypt = require("../utils/crypto").decrypt;
 const render = require("../utils/render").signinRender;
 const secret = require("../utils/config").secrept_jwt;
+var client = require('../models/db_redisconfig.js');
 
 /* GET signin page. */
 router.get("/", (req, res, next) => {
@@ -26,8 +27,10 @@ router.get("/verify", async (req, res) => {
     //console.log('r:' + r)
     if (r !== doc.result[0].password) render.err(res, "密码错误！");
     else {
-      const t = jwt.sign({ usr, pwd: r }, secret, { expiresIn: 60 * 60 * 3 });
-
+      const t = jwt.sign({ usr, pwd: r }, secret, { expiresIn: 60 * 60 * 24 });
+      // token存入redis
+      client.set(t, 1);
+      client.expire(t, 60*15);
       console.log("token:" + t);
       res.send({
         result: 1,

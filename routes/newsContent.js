@@ -5,6 +5,7 @@ const render = require("../utils/render").NewsContentRouter;
 const News = require("../models/db_mysqlnews");
 const jwt = require("jsonwebtoken");
 const secret = require("../utils/config").secrept_jwt;
+var client = require('../models/db_redisconfig.js');
 Date.prototype.Format = function (fmt) { //author: meizz 
     var o = {
         "M+": this.getMonth() + 1, //月份 
@@ -52,9 +53,14 @@ router.post("/comment", async (req, res) => {
     // var t = req.body;
     // console.log(t);
     var t = req.body.token;
-
     if (t) {
-        jwt.verify(t, secret, async(err, decoded) => {
+        client.get(t, (err, reply) => {
+            console.log('redis: ' + reply)
+            // 存在则刷新redis中的有效时间
+            if (reply) client.expire(t, 60 * 15);
+            else return res.send({ token: false, msg: "Invalid token" });
+        });
+        jwt.verify(t, secret, async (err, decoded) => {
             if (err) {
                 res.send({ token: false });
                 res.end();

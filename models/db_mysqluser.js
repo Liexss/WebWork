@@ -108,7 +108,25 @@ const showcollegeHandler = async vals =>
       });
     });
   });
-
+  const showusercollegeHandler = async vals =>
+  new Promise((resolve, reject) => {
+    pool.getConnection((err, connection) => {
+      if (err) {
+        console.log("连接失败");
+      }
+      //开启事务
+      //执行INSERT插入操作
+      connection.query(`SELECT * FROM user a left join college b on a.college_id=b.college_id where a.user_id= ?`, [vals.user_id],(e, result) => {
+        if (e) {
+          console.log("查询失败");
+        } else {
+          connection.release(); // 释放链接
+          //console.log({result});
+          resolve({ result });
+        }
+      });
+    });
+  });
 // 用user_id 查对应 user_name
 const selNameById = async vals =>
   new Promise((resolve, reject) => {
@@ -131,5 +149,6 @@ module.exports = {
   searchuserHandler,
   searchexisuserHandler,
   showcollegeHandler,
+  showusercollegeHandler,
   selNameById
 };

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/newsList.css" />
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/personal.css" />
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/foot.css" />
+
+    <title>个人信息</title>
+</head>
+
+<body>
+    {{>newsTitle}}
+    <div id="catalog" class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active disabled" href="/personal">个人信息</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/personalpas">密码设置</a>
+            </li>
+            </ul>
+    </div>
+    <div id="mainber" class="container">
+        <h4 style="font-weight: bold; display: inline-block;margin-top:20px;">个人信息</h4>
+
+        <table id="Info" class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>账号</td>
+                    <td id="user_id">admin</td>
+                </tr>
+                <tr>
+                    <td>真实姓名</td>
+                    <td id="user_name">超级管理员</td>
+                </tr>
+                <tr>
+                    <td>学院</td>
+                    <td id="college_name">材料与化学化工学院</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    {{>bottomFooter}}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
+        integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+    </script>
+    <script src="/static/javascripts/axios.min.map.js"></script>
+    <script src="/static/javascripts/s_tokenperson.js"></script>
+</body>
+
+</html>
