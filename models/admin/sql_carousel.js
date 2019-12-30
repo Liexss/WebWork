@@ -1,6 +1,6 @@
 const pool = require("../db_mysqlconfig");
 
-const deletecarouselSql = async () =>
+const deletecarouselSql = async (vals) =>
   new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
       err && console.log("连接失败");

@@ -7,28 +7,27 @@ module.exports = function (req, res, next) {
   // console.log(t)
 
   if (t) {
-    // 先去redis里找token
+    // 先去redis里查token是否存在
     client.get(t, (err, reply) => {
-      //console.log(reply)
-      // 存在则刷新redis中的有效时间
-      if (reply) client.expire(t, shortExpiresIn);
-      else return res.send({ result: 0, msg: "Invalid token" });
+      if (reply) {
+        // 存在则刷新redis中的有效时间
+        client.expire(t, shortExpiresIn);
+        jwt.verify(t, tokenSecrept, (err, decoded) => {
+          console.log('jwt: ' + JSON.stringify(decoded))
+          if (err) {
+            // 无效token
+            res.send({ result: 0, msg: "Invalid token" });
+          } else {
+            // token有效
+            req.curuser_id = decoded.user_id;
+            next();
+          }
+        });
+      } else res.send({ result: 0, msg: "Invalid token" });
     });
-    jwt.verify(t, tokenSecrept, (err, decoded) => {
-      //console.log('jwt: ' + JSON.stringify(decoded))
-      if (err) {
-        //console.log('jwt: Invalid token');
-        //token已过期或不存在
-        res.send({ result: 0, msg: "Invalid token" });
-      } else {
-        //token仍在有效刷新期
-        req.curuser_id = decoded.user_id;
-        next();
-      }
-    });
+
   } else {
-    //请求无token
-    //console.log('jwt: No token')
+    // token不存在
     res.send({ result: 0, msg: 'No token' });
   }
 };

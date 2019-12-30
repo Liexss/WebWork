@@ -4,7 +4,7 @@ $(document).ready(function () {
     event.preventDefault();
     $.ajax({
       data: { token: t, fpwd: $("#fpwd").val(), pwd: $("#pwd").val(), rpwd: $("#rpwd").val() },
-      url: "http://localhost:3001/personalpas/check",
+      url: "http://47.106.124.118:3001/personalpas/check",
       type: "POST",
       success: function (data) {
         //console.log(data);

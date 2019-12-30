@@ -45,10 +45,12 @@ router.post('/', auth, async (req, res) => {
       console.log('-> upload done');
       // 删除图片
       if (deleteList.length) {
+        console.log(deleteList)
         // 删除图片数据
         deletecarouselSql(deleteList);
         // 删除图片文件
         let img_path = await selcarouselbyidSql(deleteList);
+        console.log(img_path)
         let r = delDir(img_path.data, imgPath);
         if (r === 1) return res.send({ result: 1, msg: '更新成功！' })
       }
@@ -59,7 +61,7 @@ router.post('/', auth, async (req, res) => {
           let { name, path, size, type } = file;
           size = `${(size / 1024).toFixed(2)}KB`;
           name = name.split('.')[0];
-          let splitpath = path.split('\\');
+          let splitpath = path.split('/');
           splitpath.splice(0, 1, 'static');
           let rpath = splitpath.join('\\');
           sqlData.push([rpath, name, size, type]);
