@@ -36,7 +36,6 @@ router.post('/', auth, async (req, res) => {
     })
     .on('file', function (field, file) {        // 上传的文件数据
       allFile.push(file);
-      console.log('file: ' + file)
     })
     .on("progress", function (bytesReceived, bytesExpected) {
       uploadprogress = (bytesReceived / bytesExpected) * 100; // 计算上传进度
@@ -45,14 +44,12 @@ router.post('/', auth, async (req, res) => {
       console.log('-> upload done');
       // 删除图片
       if (deleteList.length) {
-        console.log(deleteList)
         // 删除图片数据
         deletecarouselSql(deleteList);
         // 删除图片文件
         let img_path = await selcarouselbyidSql(deleteList);
-        console.log(img_path)
         let r = delDir(img_path.data, imgPath);
-        if (r === 1) return res.send({ result: 1, msg: '更新成功！' })
+        if (r === 1 && !allFile.length) return res.send({ result: 1, msg: '删除成功！' });
       }
       // 添加图片
       if (allFile.length) {
@@ -61,7 +58,8 @@ router.post('/', auth, async (req, res) => {
           let { name, path, size, type } = file;
           size = `${(size / 1024).toFixed(2)}KB`;
           name = name.split('.')[0];
-          let splitpath = path.split('/');
+          // public\images\.... => static\images\...
+          let splitpath = path.split('\\');
           splitpath.splice(0, 1, 'static');
           let rpath = splitpath.join('\\');
           sqlData.push([rpath, name, size, type]);
@@ -82,8 +80,11 @@ router.post('/', auth, async (req, res) => {
 // 删除原有图片
 function delDir(data, curPath) {
   data.forEach(v => {
-    console.log(v.path)
-    fs.unlinkSync(v.path)
+    // static\images\.... => public\images\...
+    let splitpath = v.path.split('\\');
+    splitpath.splice(0, 1, 'public');
+    let rpath = splitpath.join('\\');
+    fs.unlinkSync(rpath);
   });
   return 1;
 }
