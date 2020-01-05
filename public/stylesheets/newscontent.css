@@ -1,15 +1,12 @@
 #showtextrow {
   margin-top: 1rem;
 }
-#showtextrow p {
-  color: rgb(168, 75, 75);
-}
 .mytext {
   margin-right: 30px;
 }
 #teacherline {
   height: 0.055rem;
-  background-color: rgb(165, 78, 78);
+  background-color: black;
 }
 #showedit {
   margin-top: 1rem;

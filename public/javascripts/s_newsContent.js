@@ -4,7 +4,7 @@ $(document).ready(function () {
     const t = localStorage.getItem("user-t");
     $.ajax({
       data: { token: t, content: $("#ttcontent").val(), news_id: $('#content').attr('name') },
-      url: "http://47.106.124.118:3001/newsContent/comment",
+      url: "http://localhost:3001/newsContent/comment",
       type: "POST",
       success: function (data) {
         //console.log(data);

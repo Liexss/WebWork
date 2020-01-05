@@ -2,7 +2,7 @@ a {
   text-decoration: none !important;
 }
 #navbar1 {
-  background-color: rgb(127, 3, 3);
+  background-color: rgb(127, 3, 3)!important;
   color: white;
 }
 
@@ -19,7 +19,7 @@ a {
   z-index: 51;
 }
 
-#navbar2 {
+.navbar2 {
   position: relative;
   z-index: 51;
 }
@@ -136,66 +136,6 @@ a {
   display: flex;
 }
 
-@media screen and (max-width: 1000px) {
-  #navbar1 {
-    display: none !important;
-  }
-  #navbar3 {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0.5rem 1rem !important;
-    z-index: 101;
-    background-color: rgb(127, 3, 3);
-  }
-  #navbar3 button {
-    padding: 9px 10px;
-    margin-left: 16px;
-    border: 1px solid #f8f9fa;
-    border-radius: 4px;
-    background-color: rgb(127, 3, 3);
-    outline: none;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  #navbar3 button:hover {
-    background-color: rgb(187, 3, 3);
-  }
-  #navbar3 button span {
-    display: block;
-    width: 3vw;
-    height: 1px;
-    border-radius: 1px;
-    background-color: #f8f9fa;
-    opacity: 1;
-  }
-  #navbar3 button span + span {
-    margin-top: 4px;
-  }
-  .nav-sel {
-    position: absolute;
-    top: 52px;
-    left: 0;
-    display: none;
-    width: 100%;
-    padding: 0;
-    overflow: hidden;
-    background-color: #fff;
-  }
-  .nav-sel li {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid rgb(127, 3, 3);
-    text-align: left;
-    list-style-type: none;
-  }
-  .nav-sel li a {
-    cursor: pointer;
-    font-size: 14px;
-    color: #333;
-    text-decoration: none;
-  }
-}
 
 .logo-1250 {
   display: none;
@@ -218,14 +158,13 @@ a {
   body .container {
     display: none;
   }
-  .logo-1250 {
-    display: block;
+  #name1{
+    display: none!important;
   }
-  #navbar1 .lf-nav {
-    margin: 0;
-  }
-  #navbar1 {
-    justify-content: space-around;
+}
+@media screen and (min-width: 1250px) {
+  #name2{
+    display: none!important;
   }
 }
 

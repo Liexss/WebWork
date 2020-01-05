@@ -9,12 +9,12 @@ var client = require('../models/db_redisconfig.js');
 
 /* GET signin page. */
 router.get("/", (req, res, next) => {
-  res.render("layout", { layout: "signin", title: "Sign in" });
+  res.render("layout", { layout: "hznusignin", title: "Hznu Sign In" });
 });
 
 router.get("/verify", async (req, res) => {
   let { usr, pwd } = url.parse(req.url, true).query;
-  //console.log(JSON.stringify(url.parse(req.url, true).query));
+  console.log(JSON.stringify(url.parse(req.url, true).query));
 
   // 用户查询
   const User = require("../models/db_mysqluser");

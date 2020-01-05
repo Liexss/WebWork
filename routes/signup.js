@@ -9,16 +9,16 @@ router.get("/", async (req, res) => {
   let collegedata = await User.showcollegeHandler();
   //console.log(collegedata.result);
   res.render("layout", {
-    layout: "signup",
-    title: "Sign up",
+    layout: "hznusignup",
+    title: "Hznu Sign Up",
     college: collegedata.result
   });
 });
 async function reserr(res, text) {
   let collegedata = await User.showcollegeHandler();
   return res.render("layout", {
-    layout: "signup",
-    title: "Sign up",
+    layout: "hznusignup",
+    title: "Hznu Sign Up",
     college: collegedata.result,
     msg: {
       text: text,
@@ -59,8 +59,8 @@ router.post("/", async (req, res) => {
   //console.log(insertUser);
   if (insertUser.success == true) {
     return res.render("layout", {
-      layout: "signin",
-      title: "Sign in",
+      layout: "hznusignin",
+      title: "Hznu Sign In",
       msg: {
         text: "注册成功",
         status: "success"

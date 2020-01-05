@@ -1,0 +1,13 @@
+.m-msg {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    /* background: rgb(105, 190, 121); */
+    font-size: 14px;
+    font-family: "lucida Grande", Verdana, "Microsoft YaHei";
+    text-align: center;
+    transform: translate(-50%, -50%);
+    animation-name: TOAST-APPEAR;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+  }

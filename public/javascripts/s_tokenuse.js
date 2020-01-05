@@ -2,12 +2,12 @@ $(document).ready(function () {
   const t = localStorage.getItem("user-t");
   $.ajax({
     data: {token:t},
-    url: "http://47.106.124.118:3001/token",
+    url: "http://localhost:3001/token",
     type: "POST",
     success: function (data) {
       //console.log(data);
       if (data.token == true) {
-        $("#textname").html(data.user.user_name);
+        $(".textname").html(data.user.user_name);
       }
       else {
         window.location = '/signin';

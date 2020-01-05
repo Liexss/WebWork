@@ -15,8 +15,8 @@ p {
 a {
   text-decoration: none !important;
 }
-#topbar {
-  background-color: rgb(141, 30, 30);
+.topbar {
+  background-color: rgb(141, 30, 30)!important;
 }
 #back {
   color: white;
@@ -39,11 +39,11 @@ a {
 #newnavbar a {
   padding: 16px 8px 16px 8px;
 }
-#navbaritem ul li a {
+.navbaritem ul li a {
   color: rgba(255, 255, 255, 0.5);
   font-size: 1.2rem;
 }
-#navbaritem ul .nav1 {
+.navbaritem ul .nav1 {
   margin-right: 6rem;
 }
 .navbar-nav .active a {
@@ -215,4 +215,14 @@ a {
 .moreone {
   color: rgb(168, 75, 75);
   text-decoration: none !important;
+}
+@media screen and (max-width: 1250px) {
+  #topbar1{
+    display: none!important;
+  }
+}
+@media screen and (min-width: 1250px) {
+  #topbar2{
+    display: none!important;
+  }
 }

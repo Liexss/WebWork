@@ -2,7 +2,6 @@ body {
   width: 100%;
   min-height: 100%;
   margin: 0 auto;
-  background-image: url(../img/backgroud.png);
   background-repeat: no-repeat;
   background-size: cover;
   overflow: auto;
@@ -11,8 +10,8 @@ body {
 a {
   text-decoration: none !important;
 }
-#topbar {
-  background-color: rgb(141, 30, 30);
+.topbar {
+  background-color: rgb(141, 30, 30)!important;
 }
 #back {
   color: white;
@@ -37,11 +36,11 @@ a {
 #newnavbar a {
   padding: 16px 8px 16px 8px;
 }
-#navbaritem ul li a {
+.navbaritem ul li a {
   color: rgba(255, 255, 255, 0.5);
   font-size: 1.2rem;
 }
-#navbaritem ul .nav1 {
+.navbaritem ul .nav1 {
   margin-right: 6rem;
 }
 .navbar-nav .active a {
@@ -51,7 +50,7 @@ a {
 
 /*content begin*/
 #navLearn {
-  background-color: rgb(168, 75, 75);
+  background-color: #6f42c1!important;
   margin-top: 1rem;
 }
 .breadcrumb-item.active {
@@ -64,4 +63,31 @@ a {
   text-decoration: none !important;
   color: rgb(168, 75, 75);
 }
+.contest-search-wrap[data-v-6136e886] {
+  background: #fdfdfd;
+  box-shadow: 0 7px 8px 0 rgba(146,166,231,.12);
+  margin-top: -10px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+.ivu-row-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.ivu-row-flex, .ivu-row-flex:after, .ivu-row-flex:before {
+  display: -ms-flexbox;
+  display: flex;
+}
 /* content end */
+@media screen and (max-width: 1250px) {
+  #topbar1{
+    display: none!important;
+  }
+}
+@media screen and (min-width: 1250px) {
+  #topbar2{
+    display: none!important;
+  }
+}

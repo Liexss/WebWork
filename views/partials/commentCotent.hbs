@@ -1,32 +1,21 @@
+<h6 class="border-bottom border-gray pb-2 mb-0">Comments</h6>
 {{#each comment}}
-<div class="row">
-    <div class="comment">
-        <table class="comment-table" commentid="565854" commentparentid="-1">
-            <tbody>
-                <tr>
-                    <td class="left">
-                        <div class="avatar">
-                            <a style="position: relative;">
-                                <img src="/static/img/no-avatar.jpg"> </a>
-                            <div><a title="Master aryanc403" class="rated-user user-orange">{{this.user_name}}</a></div>
-                        </div>
-                    </td>
-                    <td class="right">
-                        <div class="info">
-                            <span class="item"><span class="format-humantime"
-                                    title="Dec/20/2019 21:21 UTC+8">{{this.comment_time}}</span></span>
-                        </div>
-                        <div class="comment-content comment-content-565854">
-                            <div class="moveup">
-                                <div class="ttypography">
-                                    <p><a>{{this.comment_content}}</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<div class="media text-muted pt-3">
+    <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32">
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff"
+            dy=".3em">32x32</text>
+    </svg>
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <strong class="text-gray-dark">{{this.user_name}}</strong>
+            <a>{{this.comment_content}}</a>
+        </div>
+        <span class="d-block">{{this.comment_time}}</span>
     </div>
 </div>
 {{/each}}
+<small class="d-block text-right mt-3">
+    <a>All comments</a>
+</small>

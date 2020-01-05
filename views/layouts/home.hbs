@@ -4,73 +4,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="/static/stylesheets/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/static/stylesheets/home.css">
   <title>{{title}}</title>
 </head>
 
 <body>
-  <div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4" id="navbar1">
-    <!-- <div class="logo-1250">
-      <img src="/static/img/coin.jpg" alt="HZNU" title="HZNU">
-    </div> -->
+  <nav class="navbar navbar-expand-xl navbar-dark bg-dark" id="navbar1">
     <nav class="my-0 lf-nav">
       <img src="/static/img/bottomLogo.png" style="width: auto;height: auto;max-width: 60%;max-height: 60%;">
     </nav>
-    <form class="form-inline my-0 pr-2">
-      <input class="form-control mr-sm-3" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <a id="textname" class="p-2 text-white" href="/personal"></a>
-      <a class="p-2 text-white" href="#" id="back">退出登陆</a>
-    </nav>
-  </div>
-  <div class="p-2" id="navbar3">
-    <!-- <div class="logo-1250">
-      <img src="img/coin.jpg" alt="HZNU" title="HZNU">
-    </div> -->
-    <div class="navbar3-rt">
-      <form class="form-inline my-0 pr-2">
-        <input class="form-control mr-sm-3" type="text" placeholder="Search" aria-label="Search"
-          style="height: initial; line-height: initial;">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit"
-          style="padding: 6px 12px; line-height: initial;">Search</button>
-      </form>
-      <button type="submit" id="menuBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <ul class="nav-sel" style="display: none;">
-      <li><a href="">图书馆</a></li>
-      <li><a href="">信息公开</a></li>
-      <li><a href="">Email</a></li>
-      <li><a href="">信息门户</a></li>
-      <li><a href="">VPN</a></li>
-      <li><a href="">新媒体联盟</a></li>
-    </ul>
-  </div>
-  <div id="navbar2"
-    class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <nav id="navleft" class="my-0 mr-md-auto pl-5">
-      <a class="p-2 text-dark" href="#">首页</a>
-      <a class="p-2 text-dark" href="#">学校概况</a>
-      <a class="p-2 text-dark" href="#">机构设置</a>
-      <a class="p-2 text-dark" href="#">师资任务</a>
-      <a class="p-2 text-dark" href="#">人才培养</a>
-    </nav>
-    <nav id="navright" class="my-2 my-md-0 mr-md-3 pr-5">
-      <a class="p-2 text-dark" href="#">学科建设</a>
-      <a class="p-2 text-dark" href="#">社会合作</a>
-      <a class="p-2 text-dark" href="#">招生就业</a>
-      <a class="p-2 text-dark" href="#">图书档案</a>
-      <a class="p-2 text-dark" href="#">海外交流</a>
-    </nav>
-  </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06"
+      aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarsExample06">
+      <div class="mr-auto"></div>
+      <form class="form-inline my-0 pr-2">
+        <input class="form-control mr-sm-3" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-white textname" href="/personal"></a>
+        <a class="p-2 text-white" href="#" id="back">退出登陆</a>
+      </nav>
+    </div>
+  </nav>
+  <div
+    class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm navbar2" id="name1">
+      <nav id="navleft" class="my-0 mr-md-auto pl-5">
+        <a class="p-2 text-dark" href="/news">首页</a>
+        <a class="p-2 text-dark" href="#">学校概况</a>
+        <a class="p-2 text-dark" href="#">机构设置</a>
+        <a class="p-2 text-dark" href="#">师资任务</a>
+        <a class="p-2 text-dark" href="#">人才培养</a>
+      </nav>
+      <nav id="navright" class="my-2 my-md-0 mr-md-3 pr-5">
+        <a class="p-2 text-dark" href="#">学科建设</a>
+        <a class="p-2 text-dark" href="#">社会合作</a>
+        <a class="p-2 text-dark" href="#">招生就业</a>
+        <a class="p-2 text-dark" href="#">图书档案</a>
+        <a class="p-2 text-dark" href="#">海外交流</a>
+      </nav>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm navbar2" id="name2">
+    <nav class="my-0 lf-nav">
+    </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+      aria-controls="navbarsExample05" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample05">
+      <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="/news">首页</a></li>
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="#">学校概况</a></li>
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="#">机构设置</a></li>
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="#">师资任务</a></li>
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="#">人才培养</a></li>
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="#">学科建设</a></li>
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="#">社会合作</a></li>
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="#">招生就业</a></li>
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="#">图书档案</a></li>
+      <li class="nav-item"><a class="nav-link p-2 text-dark" href="#">海外交流</a></li>
+      </ul>
+    </div>
+  </nav>
   <div class="container">
     <div class="row" id="imagerow">
       <img id="coin" src="/static/img/coin.jpg" alt="#" class="m-auto rounded-circle" title="HZNU">
@@ -194,51 +194,6 @@
     crossorigin="anonymous"></script>
   <script src="/static/javascripts/s_tokenuse.js"></script>
   <script src="/static/javascripts/s_home.js"></script>
-  <script>
-    var menu = document.getElementById('menuBtn');
-    var stack = 0;
-    var H = 342;
-    menu.addEventListener('click', () => {
-      if (stack) return stack++;
-      stack++;
-      let navsel = document.getElementsByClassName('nav-sel')[0];
-      if (navsel.style.display === 'none') {
-        navsel.style.display = 'block';
-        showMenu(0, H, navsel);
-      } else {
-        hideMenu(H, navsel)
-      }
-    });
-
-    let showMenu = (h, H, navsel) => {
-      navsel.style.height = `${h += 5}px`;
-      if (h < H) {
-        setTimeout(() => showMenu(h, H, navsel), 5);
-      } else {
-        stack--;
-        //console.log(1)
-        //console.log(stack + 'show')
-        navsel.style.height = `${H}px`;
-        if (stack) hideMenu(h, navsel);
-      }
-    };
-
-    let hideMenu = (h, navsel) => {
-      navsel.style.height = `${h -= 5}px`;
-      // console.log(2)
-      if (h > 0) {
-        setTimeout(() => hideMenu(h, navsel), 5);
-      } else {
-        stack--;
-        //console.log(stack + 'hide')
-        navsel.style.display = 'none';
-        if (stack) {
-          navsel.style.display = 'block';
-          showMenu(h, H, navsel)
-        }
-      }
-    };
-  </script>
 </body>
 
 </html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="/static/img/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/static/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/static/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/static/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/util.css">
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/hznusignin.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <div class="limiter" id="loginitem">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+                <form id="sign_up" name="sign-up" method="POST" action="/signup">
+                    <div class="flex-sb-m w-full p-b-20">
+                        <span class="login100-form-title">
+                            Hznu Sign
+                        </span>
+
+                        <div>
+                            <a href="/signin" id="changesignup" class="txt3" style="color: #8B8B7A!important;">
+                                Login
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="from-row">
+                        <label for="id" class="from-label">用户名</label>
+                        <div class="wrap-input100 validate-input m-b-15">
+                            <input id="inputId" type="text" name="id" class="input100 from-input"
+                                placeholder="1-10个数字、字母或下划线" required />
+                            <span class="focus-input100"></span>
+                        </div>
+                        {{!-- <button id="subcode" class="from-btn" style="margin:0;width:30%;display:inline;">验证邮箱</button> --}}
+                    </div>
+                    <div class="from-row">
+                        <label for="name" class="from-label">姓名</label>
+                        <div class="wrap-input100 validate-input m-b-15">
+                            <input id="inputName" type="text" name="name" class="input100 from-input"
+                                placeholder="1-8个字符" required />
+                            <span class="focus-input100"></span>
+                        </div>
+                        {{!-- <button id="subcode" class="from-btn" style="margin:0;width:30%;display:inline;">验证邮箱</button> --}}
+                    </div>
+                    {{!-- <div class="from-row">
+            <label for="Checkcode" class="from-label">Verification Code</label>
+            <input type="password" name="pwd" class="from-input" placeholder="6-15个数字、字母或下划线" required />
+          </div> --}}
+                    <div class="from-row">
+                        <label for="sel1" class="from-label">学院</label>
+                        <select class="input100 form-control m-b-15" id="sel1" name="sellist1">
+                            {{#each college}}
+                            <option value='{{this.college_id}}'>{{this.college_name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="from-row">
+                        <label for="pwd" class="from-label">输入密码</label>
+
+                        <div class="wrap-input100 validate-input m-b-15">
+                            <input type="password" name="pwd" class="input100 from-input" placeholder="6-15个数字、字母或下划线"
+                                required />
+                            <span class="focus-input100"></span>
+                        </div>
+                    </div>
+                    <div class="from-row">
+                        <label for="rpwd" class="from-label">确认密码</label>
+
+                        <div class="wrap-input100 validate-input m-b-25">
+                            <input type="password" name="rpwd" class="input100 from-input" placeholder="6-15个数字、字母或下划线"
+                                required />
+                            <span class="focus-input100"></span>
+                        </div>
+                    </div>
+                    <div class="container-login100-form-btn">
+						<button class="login100-form-btn from-btn" type="submit" id="subcode"
+							style="min-width: 100%!important; margin-bottom:20px;">
+							Sign up
+						</button>
+					</div>
+                </form>
+            </div>
+        </div>
+    </div>
+{{!-- message --}}
+  {{#if msg}}
+  <div class="alert m-msg alert-danger">
+    {{msg.text}}
+  </div>
+  {{/if}}
+    <!--===============================================================================================-->
+    <script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/static/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/static/vendor/bootstrap/js/popper.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/static/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/static/vendor/daterangepicker/moment.min.js"></script>
+    <script src="/static/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="/static/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="/static/javascripts/main.js"></script>
+    <script src="/static/javascripts/s_tokenlogin.js"></script>
+    <script>
+    // 检测是否有message
+    const msgDiv = document.getElementsByClassName('m-msg')[0];
+    //console.log(msgDiv)
+    if (msgDiv) setTimeout(() => document.body.removeChild(msgDiv), 1000);
+  </script>
+</body>
+
+</html>

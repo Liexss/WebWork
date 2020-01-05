@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{{title}}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/static/img/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/stylesheets/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css">
+	<link rel="stylesheet" type="text/css" href="/static/stylesheets/hznusignin.css">
+	<!--===============================================================================================-->
+</head>
+
+<body style="background-color: #ebebeb;">
+	<div class="limiter" id="loginitem">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+				<form name="signin">
+					<div class="flex-sb-m w-full p-b-20">
+						<span class="login100-form-title">
+							Hznu Login
+						</span>
+
+						<div>
+							<a href="/signup" id="changesignup" class="txt3" style="color: #8B8B7A!important;">
+								Signup
+							</a>
+						</div>
+					</div>
+					<span class="txt1 p-b-11">
+						Username
+					</span>
+					<div class="wrap-input100 validate-input m-b-36">
+						<input class="input100 from-input" type="text" name="id" required />
+						<span class="focus-input100"></span>
+					</div>
+
+					<span class="txt1 p-b-11">
+						Password
+					</span>
+					<div class="wrap-input100 validate-input m-b-12">
+						<span class="btn-show-pass">
+							<i class="fa fa-eye"></i>
+						</span>
+						<input class="input100 from-input" type="password" name="pwd" required />
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-b-20">
+						<div class="contact100-form-checkbox">
+
+						</div>
+
+						<div>
+							<a href="#" class="txt3" id="forgettext">
+								Forgot Password?
+							</a>
+						</div>
+					</div>
+
+					<div class="">
+						<button class="login100-form-btn from-btn" type="button"
+							style="min-width: 100%!important; margin-bottom:20px;">
+							Login
+						</button>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+{{!-- message --}}
+  {{#if msg}}
+  <div class="alert m-msg alert-success">
+    {{msg.text}}
+  </div>
+  {{/if}}
+	<!--===============================================================================================-->
+	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/static/vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/javascripts/main.js"></script>
+	<script src="/static/javascripts/hznusignin.js"></script>
+	<script src="/static/javascripts/axios.min.map.js"></script>
+	<script src="/static/javascripts/s_tokenlogin.js"></script>
+	<script>
+		// 表单提交
+		let Msg = function (txt, status = 0, timeout = 1000) {
+			let msgDiv = document.createElement('DIV');
+			let content = document.createTextNode(txt);
+			if(status==0){
+				msgDiv.classList.add('alert');
+				msgDiv.classList.add('alert-danger');
+				msgDiv.classList.add('m-msg');
+			}
+			else if(status==1) {
+				msgDiv.classList.add('alert');
+				msgDiv.classList.add('alert-success');
+				msgDiv.classList.add('m-msg');
+			}
+			else{
+				msgDiv.classList.add('alert');
+				msgDiv.classList.add('alert-info');
+				msgDiv.classList.add('m-msg');
+			}
+			msgDiv.appendChild(content);
+			msgDiv.style.animationDuration = timeout / 1000 + 's';
+			document.body.appendChild(msgDiv);
+			setTimeout(() => document.body.removeChild(msgDiv), timeout);
+		}
+		const submitBtn = document.getElementsByClassName('from-btn')[0];
+		submitBtn.addEventListener('click', (e) => {
+			//e.preventDefault()
+			let usr = document.signin.id.value
+			let pwd = document.signin.pwd.value
+			if (usr == "" || pwd == "") return;
+			let data = { params: { usr, pwd } }
+			axios.get('/signin/verify', data).then((r) => {
+				//console.log(r.data);
+				let { result, msg } = r.data
+				if (result === 1) {
+					// axios.defaults.headers.common['Authorization'] = r.data.token
+					Msg(msg, result)
+					localStorage.setItem("user-t", r.data.token);
+
+					window.location = '/home';
+				}
+				else{
+					Msg(msg,0);
+				}
+			});
+		});
+		const forgetbtn = document.getElementById('forgettext');
+		forgetbtn.addEventListener('click', (e) => {
+			e.preventDefault()
+			Msg("请联系管理员",3);
+		});
+		const msgDiv = document.getElementsByClassName('m-msg')[0];
+		//console.log(msgDiv)
+		if (msgDiv) setTimeout(() => document.body.removeChild(msgDiv), 1000);
+		</script>
+		
+
+</body >
+
+</html >

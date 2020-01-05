@@ -1,6 +1,20 @@
 $(document).ready(function () {
   $("#Medianav").siblings('li').removeClass('active');
   $("#Medianav").addClass('active');
+  var t=0;
+  $(".littlecard").each(function(index,item) {
+    if(t%3==0){
+      $(this).attr("fill","#007bff");
+    }
+    else if(t%3==1){
+      $(this).attr("fill","#e83e8c");
+    }
+    else if(t%3==2){
+      $(this).attr("fill","#6f42c1");
+    }
+    t++;
+    console.log(t);
+  });
   $(".page-item").click(function () {
     var id = parseInt($(this).attr("id"));
     var totnum = parseInt($("#pagenum").attr("name"));

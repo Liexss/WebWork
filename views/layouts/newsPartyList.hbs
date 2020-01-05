@@ -4,32 +4,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="/static/stylesheets/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/static/stylesheets/newsList.css" />
   <link rel="stylesheet" type="text/css" href="/static/stylesheets/foot.css" />
   <link rel="stylesheet" type="text/css" href="/static/stylesheets/page.css" />
 
-  <title>新闻内容</title>
+  <title>党建文化</title>
 </head>
 
 <body>
   {{>newsTitle}}
-  <div class="container allcontent">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb" id="navLearn">
-        <li class="breadcrumb-item active" aria-current="page">{{title}}</li>
-      </ol>
-    </nav>
-    <div class="row">
-      <div class="col-md-12">
-        {{>listLearnContent}}
+  <main role="main" class="container allcontent">
+    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm"
+      style="background-color: #6f42c1;">
+      <div class="lh-100">
+        <h6 class="mb-0 text-white lh-100">党建文化</h6>
+        <small>Since 2011</small>
       </div>
     </div>
-    {{>pageContent}}
-  </div>
+
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+      <h6 class="border-bottom border-gray pb-2 mb-0">Party building culture</h6>
+      {{>newListContent}}
+      <small class="d-block text-right mt-3">
+        {{>pageContent}}
+      </small>
+    </div>
+  </main>
   {{>bottomFooter}}
   <script src="/static/javascripts/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
+    integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9+4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <script src="/static/javascripts/s_newsPartyList.js"></script>
   <script src="/static/javascripts/s_tokenuse.js"></script>
 </body>
