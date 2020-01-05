@@ -58,10 +58,8 @@ router.post('/', auth, async (req, res) => {
           let { name, path, size, type } = file;
           size = `${(size / 1024).toFixed(2)}KB`;
           name = name.split('.')[0];
-          // public\images\.... => static\images\...
-          let splitpath = path.split('\\');
-          splitpath.splice(0, 1, 'static');
-          let rpath = splitpath.join('\\');
+          let rpath = changePathToDB(path);
+
           sqlData.push([rpath, name, size, type]);
         });
         console.log('sqlData: ' + JSON.stringify(sqlData))
@@ -81,12 +79,34 @@ router.post('/', auth, async (req, res) => {
 function delDir(data, curPath) {
   data.forEach(v => {
     // static\images\.... => public\images\...
-    let splitpath = v.path.split('\\');
+    let splitpath = v.path.split('/');
     splitpath.splice(0, 1, 'public');
-    let rpath = splitpath.join('\\');
+    let rpath = splitpath.join('/');
+    console.log(rpath)
     fs.unlinkSync(rpath);
   });
   return 1;
+}
+
+// static/images/... => pulic/images/...
+function changePathToDel(path) {
+
+}
+
+// public\images\.... => public/images/... => static/images/...
+function changePathToDB(path) {
+  console.log(path)
+  let first = path.split('\\');
+  console.log(first)
+  let fjoin = first.join('/');
+
+  let seconed = fjoin.split('/');
+  
+  seconed.splice(0, 1, 'static');
+  let sjoin = seconed.join('/');
+  console.log(sjoin)
+
+  return sjoin;
 }
 
 module.exports = router;

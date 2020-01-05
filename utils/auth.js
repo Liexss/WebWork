@@ -13,7 +13,7 @@ module.exports = function (req, res, next) {
         // 存在则刷新redis中的有效时间
         client.expire(t, shortExpiresIn);
         jwt.verify(t, tokenSecrept, (err, decoded) => {
-          console.log('jwt: ' + JSON.stringify(decoded))
+          // console.log('jwt: ' + JSON.stringify(decoded))
           if (err) {
             // 无效token
             res.send({ result: 0, msg: "Invalid token" });
